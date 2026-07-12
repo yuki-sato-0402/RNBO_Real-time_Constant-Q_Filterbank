@@ -1,5 +1,5 @@
 # build VST3 for all platforms, add AU on MacOS
-set(PLUGIN_FORMATS VST3)
+set(PLUGIN_FORMATS Standalone VST3)
 if (CMAKE_SYSTEM_NAME STREQUAL Darwin)
   LIST(APPEND PLUGIN_FORMATS AU)
 endif()
@@ -16,26 +16,21 @@ endif()
 # the formats specified by the FORMATS arguments. This function accepts many optional arguments.
 # Check the readme at `docs/CMake API.md` in the JUCE repo for the full list.
 
-if(RNBO_EDITOR_MODE STREQUAL "WEBVIEW")
-  set(_needs_web_browser NEEDS_WEB_BROWSER TRUE)
-endif()
-
 juce_add_plugin(RNBOAudioPlugin
   # VERSION ...                        # Set this if the plugin version is different to the project version
   # ICON_BIG ...                       # ICON_* arguments specify a path to an image file to use as an icon for the Standalone
   # ICON_SMALL ...
-  COMPANY_NAME "Your_Company_Name"     # Specify the name of the plugin's author
-  IS_SYNTH TRUE                        # Is this a synth or an effect?
-  NEEDS_MIDI_INPUT TRUE                # Does the plugin need midi input?
-  NEEDS_MIDI_OUTPUT TRUE               # Does the plugin need midi output?
+  COMPANY_NAME "YukiMusic"     # Specify the name of the plugin's author
+  IS_SYNTH FALSE                        # Is this a synth or an effect?
+  NEEDS_MIDI_INPUT FALSE            # Does the plugin need midi input?
+  NEEDS_MIDI_OUTPUT FALSE            # Does the plugin need midi output?
   IS_MIDI_EFFECT FALSE                 # Is this plugin a MIDI effect?
   EDITOR_WANTS_KEYBOARD_FOCUS FALSE    # Does the editor need keyboard focus?
-  COPY_PLUGIN_AFTER_BUILD FALSE        # Should the plugin be installed to a default location after building?
-  PLUGIN_MANUFACTURER_CODE "Exmp"      # A four-character manufacturer id with at least one upper-case character
-  PLUGIN_CODE "Rnb0"                   # A unique four-character plugin id with at least one upper-case character
+  COPY_PLUGIN_AFTER_BUILD TRUE        # Should the plugin be installed to a default location after building?
+  PLUGIN_MANUFACTURER_CODE "Exm6"      # A four-character manufacturer id with at least one upper-case character
+  PLUGIN_CODE "Rnb6"                   # A unique four-character plugin id with at least one upper-case character
   FORMATS ${PLUGIN_FORMATS}            # The formats to build. Other valid formats are: AAX Unity VST AU AUv3
-  PRODUCT_NAME "RNBO Plugin"           # The name of the final executable, which can differ from the target name
-  ${_needs_web_browser})
+  PRODUCT_NAME "RNBO_Real-time_Constant-Q_Filterbank")          # The name of the final executable, which can differ from the target name
 
 # `juce_generate_juce_header` will create a JuceHeader.h for a given target, which will be generated
 # into your build tree. This should be included with `#include <JuceHeader.h>`. The include path for
@@ -52,23 +47,17 @@ juce_generate_juce_header(RNBOAudioPlugin)
 # that will be built into the target. This is a standard CMake command.
 
 target_sources(RNBOAudioPlugin PRIVATE
-  "${RNBO_CPP_DIR}/adapters/juce/RNBO_JuceAudioProcessor.cpp"
-  "${RNBO_CPP_DIR}/adapters/juce/RNBO_JuceAudioProcessorEditor.cpp"
+  #"${RNBO_CPP_DIR}/adapters/juce/RNBO_JuceAudioProcessor.cpp"
+  #"${RNBO_CPP_DIR}/adapters/juce/RNBO_JuceAudioProcessorEditor.cpp"
   "${RNBO_CPP_DIR}/RNBO.cpp"
   ${RNBO_CLASS_FILE}
   src/Plugin.cpp
+  src/CustomAudioEditor.cpp
   src/CustomAudioProcessor.cpp
   )
 
-set(RNBO_TARGET RNBOAudioPlugin)
-if(RNBO_EDITOR_MODE STREQUAL "NATIVE")
-  include(${NATIVE_EDITOR_DIR}/CMakeLists.txt)
-elseif(RNBO_EDITOR_MODE STREQUAL "WEBVIEW")
-  include(${WEB_EDITOR_DIR}/CMakeLists.txt)
-endif()
-
 if (EXISTS ${RNBO_BINARY_DATA_FILE})
-  target_sources(RNBOAudioPlugin PRIVATE ${RNBO_BINARY_DATA_FILES})
+  target_sources(RNBOAudioPlugin PRIVATE ${RNBO_BINARY_DATA_FILE})
 endif()
 
 target_include_directories(RNBOAudioPlugin
@@ -79,7 +68,6 @@ target_include_directories(RNBOAudioPlugin
   ${RNBO_CPP_DIR}/adapters/juce/
   ${RNBO_CPP_DIR}/src/3rdparty/
   src
-  ${PROJECT_BINARY_DIR}/src
 )
 
 # `target_compile_definitions` adds some preprocessor definitions to our target. In a Projucer
@@ -89,12 +77,20 @@ target_include_directories(RNBOAudioPlugin
 # definitions will be visible both to your code, and also the JUCE module code, so for new
 # definitions, pick unique names that are unlikely to collide! This is a standard CMake command.
 
+set(RNBO_JUCE_PARAM_DEFAULT_NOTIFY 1)
+if (NOT PLUGIN_PARAM_DEFAULT_NOTIFY)
+	set(RNBO_JUCE_PARAM_DEFAULT_NOTIFY 0)
+endif()
+
 target_compile_definitions(RNBOAudioPlugin
   PUBLIC
+  # JUCE_WEB_BROWSER and JUCE_USE_CURL would be on by default, but you might not need them.
+  JUCE_WEB_BROWSER=0  # If you remove this, add `NEEDS_WEB_BROWSER TRUE` to the `juce_add_plugin` call
   JUCE_USE_CURL=0     # If you remove this, add `NEEDS_CURL TRUE` to the `juce_add_plugin` call
   JUCE_VST3_CAN_REPLACE_VST2=0
   RNBO_JUCE_NO_CREATE_PLUGIN_FILTER=1 #don't have RNBO create its own createPluginFilter function, we'll create it ourselves
-  RNBO_JUCE_PARAM_DEFAULT_NOTIFY=$<BOOL:${PLUGIN_PARAM_DEFAULT_NOTIFY}>)
+  RNBO_JUCE_PARAM_DEFAULT_NOTIFY=${RNBO_JUCE_PARAM_DEFAULT_NOTIFY}
+  )
 
 # `target_link_libraries` links libraries and JUCE modules to other libraries or executables. Here,
 # we're linking our executable target to the `juce::juce_audio_utils` module. Inter-module
@@ -105,7 +101,6 @@ target_compile_definitions(RNBOAudioPlugin
 target_link_libraries(RNBOAudioPlugin
   PRIVATE
   juce::juce_audio_utils
-  juce::juce_gui_extra
   PUBLIC
   juce::juce_recommended_config_flags
   juce::juce_recommended_lto_flags
