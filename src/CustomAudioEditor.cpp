@@ -7,30 +7,29 @@ CustomAudioEditor::CustomAudioEditor (CustomAudioProcessor& p, juce::AudioProces
     addAndMakeVisible(spectrogramDisplay);
 
      
-    addAndMakeVisible(Q_factorDial);
-    Q_factorDialAttachment.reset (new SliderAttachment (valueTreeState, "Q_factor", Q_factorDial));
-    Q_factorDial.setSliderStyle(juce::Slider::RotaryHorizontalVerticalDrag);
-    Q_factorDial.setTextBoxStyle (juce::Slider::TextBoxBelow, false, Q_factorDial.getTextBoxWidth(), Q_factorDial.getTextBoxHeight());
-    Q_factorDial.setTextValueSuffix (" %");
-    Q_factorDial.setColour(juce::Slider::rotarySliderOutlineColourId, juce::Colour(45, 48, 58));
-    Q_factorDial.setColour(juce::Slider::rotarySliderFillColourId, juce::Colour(255, 110, 0));
-    Q_factorDial.setColour(juce::Slider::thumbColourId , juce::Colour(255, 160, 40));
-    Q_factorDial.setColour(juce::Slider::textBoxTextColourId, juce::Colours::white);
-    Q_factorDial.setColour(juce::Slider::textBoxOutlineColourId , juce::Colour(45, 48, 58));
-    
+    addAndMakeVisible(Q_factorSlider);
+    Q_factorSliderAttachment.reset (new SliderAttachment (valueTreeState, "Q_factor", Q_factorSlider));
+    Q_factorSlider.setSliderStyle(juce::Slider::LinearHorizontal);
+    Q_factorSlider.setTextBoxStyle (juce::Slider::TextBoxBelow, false, Q_factorSlider.getTextBoxWidth(), Q_factorSlider.getTextBoxHeight());
+    Q_factorSlider.setTextValueSuffix (" %");
+    Q_factorSlider.setColour(juce::Slider::backgroundColourId, juce::Colours::white);
+    Q_factorSlider.setColour(juce::Slider::trackColourId, juce::Colours::darkgrey.withAlpha(0.75f));
+    Q_factorSlider.setColour(juce::Slider::thumbColourId , juce::Colours::darkgrey.brighter(1.5));
+    Q_factorSlider.setColour(juce::Slider::textBoxTextColourId, juce::Colours::white);
+    Q_factorSlider.setColour(juce::Slider::textBoxOutlineColourId , juce::Colours::white); 
+
     addAndMakeVisible(Q_factorLabel);
     addAndMakeVisible(Q_factorLabel);
     Q_factorLabel.setText ("Q Factor", juce::dontSendNotification);
     Q_factorLabel.setJustificationType(juce::Justification::centred);
-    Q_factorLabel.setColour(juce::Label::textColourId, juce::Colour(180, 185, 195));
-
+  
     setSize(800, 500); // Make the plugin wider so the 88 keyboard is more usable
 }
 
 
 void CustomAudioEditor::paint (Graphics& g)
 {
-    g.fillAll(juce::Colour(15, 18, 26)); 
+    g.fillAll(juce::Colour(8, 10, 15));
 }
 
 void CustomAudioEditor::resized()
@@ -43,7 +42,7 @@ void CustomAudioEditor::resized()
     spectrogramDisplay.setBounds(padding, padding, area.getWidth() - (padding * 2), spectrogramHeight);
 
     // Position the Q Factor dial below the spectrogram
-    int dialSize = 90;
-    Q_factorDial.setBounds(padding, spectrogramDisplay.getBottom() + 15, dialSize, dialSize);
-    Q_factorLabel.setBounds(Q_factorDial.getX(), Q_factorDial.getBottom() + 2, Q_factorDial.getWidth(), 20);
+    int sliderHeight = area.getHeight() - spectrogramHeight - (padding * 2) - 20;
+    Q_factorSlider.setBounds(padding, spectrogramDisplay.getBottom() + 15, (area.getWidth() - (padding * 2)) / 2, sliderHeight);
+    Q_factorLabel.setBounds(Q_factorSlider.getX(), Q_factorSlider.getY() , Q_factorSlider.getWidth(), Q_factorSlider.getTextBoxHeight());
 }

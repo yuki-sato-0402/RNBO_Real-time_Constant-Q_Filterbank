@@ -16,13 +16,13 @@ private:
     juce::AudioProcessorValueTreeState& valueTreeState; // ✅ Hold by reference
     CustomAudioProcessor& audioProcessor;
     
-    juce::Slider Q_factorDial;
+    juce::Slider Q_factorSlider;
 
 
     juce::Label Q_factorLabel;
 
 
-    std::unique_ptr<SliderAttachment> Q_factorDialAttachment;
+    std::unique_ptr<SliderAttachment> Q_factorSliderAttachment;
 
     SpectrogramDisplay spectrogramDisplay;
     

@@ -11,6 +11,37 @@ public:
         : ringBuffer(dataPtr)
     {
         visualEnergy.resize(88, 0.0f);
+        
+        // Optimize: Use a fixed-size low-resolution canvas for the waterfall.
+        // This dramatically reduces CPU usage for image scrolling and drawing,
+        // while the GPU handles the high-quality scaling and smoothing.
+        const int imgWidth = 260; // 52 white keys * 5 pixels per key
+        const int imgHeight = 150; // 150 history slices
+        spectrogramImage = juce::Image(juce::Image::ARGB, imgWidth, imgHeight, true);
+        spectrogramImage.clear(spectrogramImage.getBounds(), juce::Colour(10, 13, 20));
+
+        // Precompute key layout in the low-resolution image coordinates
+        float imgWhiteKeyWidth = (float)imgWidth / 52.0f; // Exactly 5.0f
+        float imgBlackKeyWidth = imgWhiteKeyWidth * 0.62f; // 3.1f
+
+        imgKeyVisuals.resize(88);
+        for (int i = 0; i < 88; ++i)
+        {
+            int w = getWhiteKeyIndex(i);
+            imgKeyVisuals[i].isBlack = (w == -1);
+            if (!imgKeyVisuals[i].isBlack)
+            {
+                imgKeyVisuals[i].x = w * imgWhiteKeyWidth;
+                imgKeyVisuals[i].w = imgWhiteKeyWidth;
+            }
+            else
+            {
+                int leftW = getBlackKeyLeftWhiteIndex(i);
+                imgKeyVisuals[i].x = (leftW + 1) * imgWhiteKeyWidth - (imgBlackKeyWidth * 0.5f);
+                imgKeyVisuals[i].w = imgBlackKeyWidth;
+            }
+        }
+
         setFramesPerSecond(60);
     }
 
@@ -112,16 +143,20 @@ public:
         juce::Rectangle<float> rect;
     };
 
+    struct ImageKeyVisual
+    {
+        float x;
+        float w;
+        bool isBlack;
+    };
+
     void update() override
     {
         if (ringBuffer == nullptr)
             return;
 
-        int W_img = spectrogramImage.getWidth();
-        int H_img = spectrogramImage.getHeight();
-
-        if (W_img <= 0 || H_img <= 0)
-            return;
+        const int imgW = spectrogramImage.getWidth();
+        const int imgH = spectrogramImage.getHeight();
 
         // 1. Fetch latest raw values from processor buffer and apply decay for keyboard visual response
         std::vector<float> latestEnergy(88);
@@ -133,38 +168,34 @@ public:
             visualEnergy[i] = juce::jmax(raw, visualEnergy[i] * 0.90f);
         }
 
-        // 2. Scroll the spectrogram image upwards
+        // 2. Scroll the low-resolution spectrogram image upwards (extremely cheap!)
         {
             juce::Graphics imgG(spectrogramImage);
             imgG.drawImage(spectrogramImage,
-                           0, 0, W_img, H_img - scrollSpeed,
-                           0, scrollSpeed, W_img, H_img - scrollSpeed);
+                           0, 0, imgW, imgH - scrollSpeed,
+                           0, scrollSpeed, imgW, imgH - scrollSpeed);
 
             // Clear the new bottom slice with the background color
             imgG.setColour(juce::Colour(10, 13, 20));
-            imgG.fillRect(0, H_img - scrollSpeed, W_img, scrollSpeed);
+            imgG.fillRect(0, imgH - scrollSpeed, imgW, scrollSpeed);
 
-            // Draw new spectrogram row (white keys first, then black keys on top for correct layout overlapping)
+            // Draw new spectrogram row (white keys first, then black keys on top)
             for (int i = 0; i < 88; ++i)
             {
-                if (!keyVisuals[i].isBlack)
+                if (!imgKeyVisuals[i].isBlack)
                 {
                     float energy = latestEnergy[i];
                     imgG.setColour(getSpectrogramColor(energy));
-                    float x = keyVisuals[i].rect.getX();
-                    float w = keyVisuals[i].rect.getWidth();
-                    imgG.fillRect(x, (float)(H_img - scrollSpeed), w, (float)scrollSpeed);
+                    imgG.fillRect(imgKeyVisuals[i].x, (float)(imgH - scrollSpeed), imgKeyVisuals[i].w, (float)scrollSpeed);
                 }
             }
             for (int i = 0; i < 88; ++i)
             {
-                if (keyVisuals[i].isBlack)
+                if (imgKeyVisuals[i].isBlack)
                 {
                     float energy = latestEnergy[i];
                     imgG.setColour(getSpectrogramColor(energy));
-                    float x = keyVisuals[i].rect.getX();
-                    float w = keyVisuals[i].rect.getWidth();
-                    imgG.fillRect(x, (float)(H_img - scrollSpeed), w, (float)scrollSpeed);
+                    imgG.fillRect(imgKeyVisuals[i].x, (float)(imgH - scrollSpeed), imgKeyVisuals[i].w, (float)scrollSpeed);
                 }
             }
         }
@@ -182,7 +213,7 @@ public:
         float keyboardHeight = keyVisuals.empty() ? 80.0f : keyVisuals[0].rect.getHeight();
         float spectrogramHeight = bounds.getHeight() - keyboardHeight;
 
-        // 1. Draw the scrolling spectrogram image
+        // 1. Draw the scrolling spectrogram image (stretched by GPU)
         if (spectrogramImage.isValid())
         {
             g.drawImageWithin(spectrogramImage, 
@@ -283,7 +314,6 @@ public:
         // Keyboard height takes 22% of UI or stays within 55px and 120px
         float keyboardHeight = height * 0.22f;
         keyboardHeight = juce::jlimit(55.0f, 120.0f, keyboardHeight);
-        float spectrogramHeight = height - keyboardHeight;
         
         float whiteKeyWidth = width / 52.0f;
         float blackKeyWidth = whiteKeyWidth * 0.62f;
@@ -324,28 +354,15 @@ public:
                 keyVisuals.push_back(kv);
             }
         }
-        
-        // Recreate image, copying old image content if possible
-        juce::Image newImage(juce::Image::ARGB, (int)width, (int)spectrogramHeight, true);
-        newImage.clear(newImage.getBounds(), juce::Colour(10, 13, 20));
-        
-        if (spectrogramImage.isValid())
-        {
-            juce::Graphics g(newImage);
-            g.drawImage(spectrogramImage, 
-                        0, 0, newImage.getWidth(), newImage.getHeight(), 
-                        0, 0, spectrogramImage.getWidth(), spectrogramImage.getHeight());
-        }
-        
-        spectrogramImage = newImage;
     }
 
 private:
     const float* ringBuffer = nullptr;
     std::vector<float> visualEnergy;
     std::vector<KeyVisual> keyVisuals;
+    std::vector<ImageKeyVisual> imgKeyVisuals;
     juce::Image spectrogramImage;
-    const int scrollSpeed = 2; // Scroll 2 pixels per frame
+    const int scrollSpeed = 1; // Scroll 1 pixel per frame (smoother!)
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(SpectrogramDisplay)
 };
