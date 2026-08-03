@@ -40,113 +40,13 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-4",
+					"id" : "obj-27",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 242.0, 229.0, 33.0, 22.0 ],
-					"text" : "-~ 1."
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-6",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 242.0, 197.0, 40.0, 22.0 ],
-					"text" : "*~ 0.7"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-13",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 242.0, 164.0, 52.0, 22.0 ],
-					"text" : "phasor~"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-10",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 123.25, 67.0, 32.0, 22.0 ],
-					"text" : "mtof"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontsize" : 27.788399284000462,
-					"id" : "obj-9",
-					"maxclass" : "number",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 123.25, 16.0, 92.0, 40.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"attr" : "overtoneThreshold",
-					"fontsize" : 16.623593797506839,
-					"id" : "obj-34",
-					"maxclass" : "attrui",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 171.0, 98.0, 214.5, 27.0 ],
-					"text_width" : 163.0
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-33",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 171.0, 229.0, 33.0, 22.0 ],
-					"text" : "-~ 1."
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-32",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 171.0, 197.0, 40.0, 22.0 ],
-					"text" : "*~ 0.7"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-28",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 171.0, 164.0, 52.0, 22.0 ],
-					"text" : "phasor~"
+					"patching_rect" : [ 313.0, 241.0, 76.0, 22.0 ],
+					"text" : "phasor~ 330"
 				}
 
 			}
@@ -158,8 +58,7 @@
 								"absolutepath" : "Macintosh HD:/Users/yuki/Downloads/piano2.wav",
 								"filename" : "piano2.wav",
 								"filekind" : "audiofile",
-								"id" : "u848003039",
-								"selection" : [ 0.284210526315789, 0.578947368421053 ],
+								"id" : "u066005641",
 								"loop" : 1,
 								"content_state" : 								{
 									"loop" : 1
@@ -171,7 +70,7 @@
 ,
 					"followglobaltempo" : 0,
 					"formantcorrection" : 0,
-					"id" : "obj-21",
+					"id" : "obj-25",
 					"maxclass" : "playlist~",
 					"mode" : "basic",
 					"numinlets" : 1,
@@ -180,7 +79,7 @@
 					"originaltempo" : 120.0,
 					"outlettype" : [ "signal", "signal", "signal", "", "dictionary" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 616.0, 124.5, 150.0, 30.0 ],
+					"patching_rect" : [ 216.0, 160.0, 150.0, 30.0 ],
 					"pitchcorrection" : 0,
 					"quality" : "basic",
 					"timestretch" : [ 0 ]
@@ -189,15 +88,37 @@
 			}
 , 			{
 				"box" : 				{
+					"id" : "obj-23",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 17.0, 88.0, 40.0, 22.0 ],
+					"text" : "*~ 1.5"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-22",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 49.75, 88.0, 40.0, 22.0 ],
+					"text" : "*~ 1.5"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"basictuning" : 440,
-					"clipheight" : 31.0,
 					"data" : 					{
 						"clips" : [ 							{
-								"absolutepath" : "Macintosh HD:/Users/yuki/Downloads/piano.wav",
-								"filename" : "piano.wav",
+								"absolutepath" : "Macintosh HD:/Users/yuki/Downloads/Inst 1.wav",
+								"filename" : "Inst 1.wav",
 								"filekind" : "audiofile",
-								"id" : "u501002504",
-								"selection" : [ 0.398773006134969, 0.44478527607362 ],
+								"id" : "u978004672",
 								"loop" : 1,
 								"content_state" : 								{
 									"loop" : 1
@@ -218,10 +139,70 @@
 					"originaltempo" : 120.0,
 					"outlettype" : [ "signal", "signal", "signal", "", "dictionary" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 616.0, 81.5, 129.0, 32.0 ],
+					"patching_rect" : [ 17.0, 43.0, 150.0, 30.0 ],
 					"pitchcorrection" : 0,
 					"quality" : "basic",
 					"timestretch" : [ 0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"attr" : "noiseFloor",
+					"fontsize" : 16.623593797506839,
+					"id" : "obj-15",
+					"maxclass" : "attrui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 224.0, 109.0, 214.5, 27.0 ],
+					"text_width" : 163.0
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"attr" : "polyTolerance",
+					"fontsize" : 16.623593797506839,
+					"id" : "obj-14",
+					"maxclass" : "attrui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 224.0, 81.0, 214.5, 27.0 ],
+					"text_width" : 163.0
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"attr" : "Q_factor",
+					"fontsize" : 16.623593797506839,
+					"id" : "obj-3",
+					"maxclass" : "attrui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 224.0, 23.0, 214.5, 27.0 ],
+					"text_width" : 163.0
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"attr" : "overtoneThreshold",
+					"fontsize" : 16.623593797506839,
+					"id" : "obj-34",
+					"maxclass" : "attrui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 224.0, 51.5, 214.5, 27.0 ],
+					"text_width" : 163.0
 				}
 
 			}
@@ -265,26 +246,12 @@
 			}
 , 			{
 				"box" : 				{
-					"attr" : "Q_factor",
-					"fontsize" : 16.623593797506839,
-					"id" : "obj-3",
-					"maxclass" : "attrui",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 171.0, 65.0, 185.0, 27.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-18",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 388.5, 46.0, 63.0, 22.0 ],
+					"patching_rect" : [ 466.0, 61.0, 63.0, 22.0 ],
 					"text" : "metro 250"
 				}
 
@@ -298,7 +265,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 388.5, 127.0, 108.0, 48.0 ]
+					"patching_rect" : [ 466.0, 171.0, 108.0, 48.0 ]
 				}
 
 			}
@@ -310,7 +277,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 388.5, 11.0, 24.0, 24.0 ]
+					"patching_rect" : [ 466.0, 26.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -318,37 +285,13 @@
 				"box" : 				{
 					"fontsize" : 27.140947939561922,
 					"id" : "obj-5",
+					"linecount" : 2,
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "int" ],
-					"patching_rect" : [ 388.5, 73.0, 163.0, 39.0 ],
+					"patching_rect" : [ 466.0, 88.0, 119.0, 69.0 ],
 					"text" : "adstatus cpu"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontsize" : 27.788399284000462,
-					"id" : "obj-11",
-					"maxclass" : "number",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 17.0, 16.0, 92.0, 40.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-12",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 17.0, 67.0, 32.0, 22.0 ],
-					"text" : "mtof"
 				}
 
 			}
@@ -440,6 +383,509 @@
 						"title" : "untitled",
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-8",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 194.0, 51.0, 115.0, 23.0 ],
+									"rnbo_classname" : "setparam",
+									"rnbo_serial" : 1,
+									"rnbo_uniqueid" : "setparam_obj-8",
+									"rnboinfo" : 									{
+										"needsInstanceInfo" : 1,
+										"argnames" : 										{
+											"name" : 											{
+												"attrOrProp" : 2,
+												"digest" : "attribute/param to control",
+												"defaultarg" : 1,
+												"isalias" : 0,
+												"aliases" : [  ],
+												"settable" : 1,
+												"attachable" : 0,
+												"isparam" : 0,
+												"deprecated" : 0,
+												"touched" : 0,
+												"type" : "symbol",
+												"mandatory" : 1
+											}
+
+										}
+,
+										"inputs" : [ 											{
+												"name" : "input",
+												"type" : [ "bang", "number", "list", "signal" ],
+												"digest" : "attribute or parameter value (bang, number, list)",
+												"hot" : 1,
+												"docked" : 0
+											}
+ ],
+										"outputs" : [ 											{
+												"name" : "output",
+												"type" : [ "bang", "number", "list", "signal" ],
+												"digest" : "connect to first inlet of gen or subpatcher",
+												"docked" : 0
+											}
+ ],
+										"helpname" : "set",
+										"aliasOf" : "set",
+										"classname" : "setparam",
+										"operator" : 0,
+										"versionId" : 1197449671,
+										"changesPatcherIO" : 0
+									}
+,
+									"text" : "setparam noiseFloor"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-13",
+									"linecount" : 2,
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 194.0, 7.0, 148.0, 37.0 ],
+									"rnbo_classname" : "param",
+									"rnbo_extra_attributes" : 									{
+										"displayorder" : "-",
+										"ctlin" : 0.0,
+										"sendinit" : 1,
+										"enum" : "",
+										"unit" : "",
+										"meta" : "",
+										"steps" : 0.0,
+										"order" : "0",
+										"fromnormalized" : "",
+										"exponent" : 1.0,
+										"preset" : 1,
+										"displayname" : "",
+										"tonormalized" : ""
+									}
+,
+									"rnbo_serial" : 1,
+									"rnbo_uniqueid" : "noiseFloor",
+									"rnboinfo" : 									{
+										"needsInstanceInfo" : 1,
+										"argnames" : 										{
+											"value" : 											{
+												"attrOrProp" : 1,
+												"digest" : "Parameter value",
+												"defaultarg" : 2,
+												"isalias" : 0,
+												"aliases" : [  ],
+												"settable" : 1,
+												"attachable" : 0,
+												"isparam" : 1,
+												"deprecated" : 0,
+												"touched" : 0,
+												"inlet" : 1,
+												"type" : "number",
+												"defaultValue" : "15"
+											}
+,
+											"normalizedvalue" : 											{
+												"attrOrProp" : 1,
+												"digest" : "Set value normalized. ",
+												"isalias" : 0,
+												"aliases" : [  ],
+												"attachable" : 0,
+												"isparam" : 0,
+												"deprecated" : 0,
+												"touched" : 0,
+												"inlet" : 1,
+												"type" : "number"
+											}
+,
+											"reset" : 											{
+												"attrOrProp" : 1,
+												"digest" : "Reset param to initial value",
+												"isalias" : 0,
+												"aliases" : [  ],
+												"attachable" : 1,
+												"isparam" : 0,
+												"deprecated" : 0,
+												"touched" : 0,
+												"type" : "bang"
+											}
+,
+											"normalized" : 											{
+												"attrOrProp" : 1,
+												"digest" : "Normalized parameter value.",
+												"isalias" : 0,
+												"aliases" : [  ],
+												"attachable" : 0,
+												"isparam" : 0,
+												"deprecated" : 0,
+												"touched" : 0,
+												"outlet" : 1,
+												"type" : "number"
+											}
+,
+											"name" : 											{
+												"attrOrProp" : 2,
+												"digest" : "Name of the parameter",
+												"defaultarg" : 1,
+												"isalias" : 0,
+												"aliases" : [  ],
+												"settable" : 1,
+												"attachable" : 0,
+												"isparam" : 0,
+												"deprecated" : 0,
+												"touched" : 0,
+												"type" : "symbol",
+												"label" : "Parameter Name",
+												"mandatory" : 1
+											}
+,
+											"enum" : 											{
+												"attrOrProp" : 2,
+												"digest" : "Use an enumerated output",
+												"isalias" : 0,
+												"aliases" : [  ],
+												"settable" : 1,
+												"attachable" : 0,
+												"isparam" : 0,
+												"deprecated" : 0,
+												"touched" : 0,
+												"type" : "list",
+												"label" : "Enum Values",
+												"displayorder" : 6
+											}
+,
+											"minimum" : 											{
+												"attrOrProp" : 2,
+												"digest" : "Minimum value",
+												"isalias" : 0,
+												"aliases" : [ "min" ],
+												"settable" : 1,
+												"attachable" : 0,
+												"isparam" : 0,
+												"deprecated" : 0,
+												"touched" : 0,
+												"type" : "number",
+												"defaultValue" : "0",
+												"label" : "Minimum",
+												"displayorder" : 1
+											}
+,
+											"min" : 											{
+												"attrOrProp" : 2,
+												"digest" : "Minimum value",
+												"isalias" : 1,
+												"aliasOf" : "minimum",
+												"aliases" : [  ],
+												"settable" : 1,
+												"attachable" : 0,
+												"isparam" : 0,
+												"deprecated" : 0,
+												"touched" : 0,
+												"type" : "number",
+												"defaultValue" : "0",
+												"label" : "Minimum",
+												"displayorder" : 1
+											}
+,
+											"maximum" : 											{
+												"attrOrProp" : 2,
+												"digest" : "Maximum value",
+												"isalias" : 0,
+												"aliases" : [ "max" ],
+												"settable" : 1,
+												"attachable" : 0,
+												"isparam" : 0,
+												"deprecated" : 0,
+												"touched" : 0,
+												"type" : "number",
+												"defaultValue" : "1",
+												"label" : "Maximum",
+												"displayorder" : 2
+											}
+,
+											"max" : 											{
+												"attrOrProp" : 2,
+												"digest" : "Maximum value",
+												"isalias" : 1,
+												"aliasOf" : "maximum",
+												"aliases" : [  ],
+												"settable" : 1,
+												"attachable" : 0,
+												"isparam" : 0,
+												"deprecated" : 0,
+												"touched" : 0,
+												"type" : "number",
+												"defaultValue" : "1",
+												"label" : "Maximum",
+												"displayorder" : 2
+											}
+,
+											"exponent" : 											{
+												"attrOrProp" : 2,
+												"digest" : "Scale values exponentially",
+												"isalias" : 0,
+												"aliases" : [  ],
+												"settable" : 1,
+												"attachable" : 0,
+												"isparam" : 0,
+												"deprecated" : 0,
+												"touched" : 0,
+												"type" : "number",
+												"defaultValue" : "1",
+												"label" : "Exponent",
+												"displayorder" : 7
+											}
+,
+											"steps" : 											{
+												"attrOrProp" : 2,
+												"digest" : "Divide the output into a number of discrete steps",
+												"isalias" : 0,
+												"aliases" : [  ],
+												"settable" : 1,
+												"attachable" : 0,
+												"isparam" : 0,
+												"deprecated" : 0,
+												"touched" : 0,
+												"type" : "number",
+												"defaultValue" : "0",
+												"label" : "Steps",
+												"displayorder" : 8
+											}
+,
+											"displayName" : 											{
+												"attrOrProp" : 2,
+												"digest" : "DEPRECATED: Use the lower case 'displayname' instead",
+												"isalias" : 0,
+												"aliases" : [  ],
+												"settable" : 1,
+												"attachable" : 0,
+												"isparam" : 0,
+												"deprecated" : 1,
+												"touched" : 0,
+												"type" : "symbol",
+												"label" : "Display Name"
+											}
+,
+											"displayname" : 											{
+												"attrOrProp" : 2,
+												"digest" : "A more readable name for the parameter in an external RNBO target",
+												"isalias" : 0,
+												"aliases" : [  ],
+												"settable" : 1,
+												"attachable" : 0,
+												"isparam" : 0,
+												"deprecated" : 0,
+												"touched" : 0,
+												"type" : "symbol",
+												"defaultValue" : "",
+												"label" : "Display Name",
+												"displayorder" : 14
+											}
+,
+											"unit" : 											{
+												"attrOrProp" : 2,
+												"digest" : "A symbol to describe the unit of the parameter in an external RNBO target",
+												"isalias" : 0,
+												"aliases" : [  ],
+												"settable" : 1,
+												"attachable" : 0,
+												"isparam" : 0,
+												"deprecated" : 0,
+												"touched" : 0,
+												"type" : "symbol",
+												"defaultValue" : "",
+												"label" : "Unit",
+												"displayorder" : 15
+											}
+,
+											"tonormalized" : 											{
+												"attrOrProp" : 2,
+												"digest" : "Converts a real parameter value to its normalized form",
+												"isalias" : 0,
+												"aliases" : [  ],
+												"settable" : 1,
+												"attachable" : 0,
+												"isparam" : 0,
+												"deprecated" : 0,
+												"touched" : 0,
+												"type" : "symbol",
+												"label" : "To Normalized Expression",
+												"displayorder" : 10
+											}
+,
+											"fromnormalized" : 											{
+												"attrOrProp" : 2,
+												"digest" : "Converts a normalized parameter into its actual parameter value",
+												"isalias" : 0,
+												"aliases" : [  ],
+												"settable" : 1,
+												"attachable" : 0,
+												"isparam" : 0,
+												"deprecated" : 0,
+												"touched" : 0,
+												"type" : "symbol",
+												"label" : "From Normalized Expression",
+												"displayorder" : 9
+											}
+,
+											"order" : 											{
+												"attrOrProp" : 2,
+												"digest" : "Order in which initial parameter values will be sent out on patcher load. The order can be numeric or symbolic ('first' and 'last')",
+												"isalias" : 0,
+												"aliases" : [  ],
+												"settable" : 1,
+												"attachable" : 0,
+												"isparam" : 0,
+												"deprecated" : 0,
+												"touched" : 0,
+												"type" : "symbol",
+												"defaultValue" : "0",
+												"label" : "Restore Order",
+												"displayorder" : 12
+											}
+,
+											"displayorder" : 											{
+												"attrOrProp" : 2,
+												"digest" : "Order in which parameters will show up in a list of all parameters. The order can be numeric or symbolic ('first' and 'last')",
+												"isalias" : 0,
+												"aliases" : [  ],
+												"settable" : 1,
+												"attachable" : 0,
+												"isparam" : 0,
+												"deprecated" : 0,
+												"touched" : 0,
+												"type" : "symbol",
+												"defaultValue" : "-",
+												"label" : "Display Order",
+												"displayorder" : 13
+											}
+,
+											"sendinit" : 											{
+												"attrOrProp" : 2,
+												"digest" : "Send initial value",
+												"isalias" : 0,
+												"aliases" : [  ],
+												"settable" : 1,
+												"attachable" : 0,
+												"isparam" : 0,
+												"deprecated" : 0,
+												"touched" : 0,
+												"type" : "bool",
+												"defaultValue" : "true",
+												"label" : "Send Init",
+												"displayorder" : 4
+											}
+,
+											"ctlin" : 											{
+												"attrOrProp" : 2,
+												"digest" : "MIDI controller number to control this parameter.",
+												"isalias" : 0,
+												"aliases" : [  ],
+												"settable" : 1,
+												"attachable" : 0,
+												"isparam" : 0,
+												"deprecated" : 0,
+												"touched" : 0,
+												"type" : "number",
+												"defaultValue" : "-1",
+												"label" : "MIDI Controller Number.",
+												"displayorder" : 16
+											}
+,
+											"meta" : 											{
+												"attrOrProp" : 2,
+												"digest" : "A JSON formatted string containing metadata for use by the exported code",
+												"isalias" : 0,
+												"aliases" : [  ],
+												"settable" : 1,
+												"attachable" : 0,
+												"isparam" : 0,
+												"deprecated" : 0,
+												"touched" : 0,
+												"type" : "symbol",
+												"defaultValue" : "",
+												"label" : "Metadata",
+												"displayorder" : 17
+											}
+,
+											"nopreset" : 											{
+												"attrOrProp" : 2,
+												"digest" : "Do not add this value to the preset [DEPRECATED - USE @preset 0 instead].",
+												"isalias" : 0,
+												"aliases" : [  ],
+												"settable" : 1,
+												"attachable" : 0,
+												"isparam" : 0,
+												"deprecated" : 1,
+												"touched" : 0,
+												"type" : "bool",
+												"defaultValue" : "false"
+											}
+,
+											"preset" : 											{
+												"attrOrProp" : 2,
+												"digest" : "Add this value to the preset.",
+												"isalias" : 0,
+												"aliases" : [  ],
+												"settable" : 1,
+												"attachable" : 0,
+												"isparam" : 0,
+												"deprecated" : 0,
+												"touched" : 0,
+												"type" : "bool",
+												"defaultValue" : "true",
+												"label" : "Include In Preset",
+												"displayorder" : 11
+											}
+
+										}
+,
+										"inputs" : [ 											{
+												"name" : "value",
+												"type" : "number",
+												"digest" : "Parameter value",
+												"defaultarg" : 2,
+												"hot" : 1,
+												"docked" : 0
+											}
+, 											{
+												"name" : "normalizedvalue",
+												"type" : "number",
+												"digest" : "Set value normalized. ",
+												"docked" : 0
+											}
+ ],
+										"outputs" : [ 											{
+												"name" : "value",
+												"type" : "number",
+												"digest" : "Parameter value",
+												"defaultarg" : 2,
+												"hot" : 1,
+												"docked" : 0
+											}
+, 											{
+												"name" : "normalized",
+												"type" : "number",
+												"digest" : "Normalized parameter value.",
+												"docked" : 0
+											}
+ ],
+										"helpname" : "param",
+										"aliasOf" : "param",
+										"classname" : "param",
+										"operator" : 0,
+										"versionId" : -1661410411,
+										"changesPatcherIO" : 0
+									}
+,
+									"text" : "param noiseFloor @min 5. @max 30. @value 15.",
+									"varname" : "noiseFloor"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-19",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -447,7 +893,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 12.0, 51.0, 132.0, 23.0 ],
 									"rnbo_classname" : "setparam",
-									"rnbo_serial" : 4,
+									"rnbo_serial" : 2,
 									"rnbo_uniqueid" : "setparam_obj-19",
 									"rnboinfo" : 									{
 										"needsInstanceInfo" : 1,
@@ -507,22 +953,22 @@
 									"patching_rect" : [ 12.0, 7.0, 166.0, 37.0 ],
 									"rnbo_classname" : "param",
 									"rnbo_extra_attributes" : 									{
-										"exponent" : 1.0,
+										"displayorder" : "-",
 										"ctlin" : 0.0,
 										"sendinit" : 1,
-										"fromnormalized" : "",
-										"displayname" : "",
-										"meta" : "",
-										"unit" : "",
-										"displayorder" : "-",
-										"steps" : 0.0,
 										"enum" : "",
+										"unit" : "",
+										"meta" : "",
+										"steps" : 0.0,
 										"order" : "0",
-										"tonormalized" : "",
-										"preset" : 1
+										"fromnormalized" : "",
+										"exponent" : 1.0,
+										"preset" : 1,
+										"displayname" : "",
+										"tonormalized" : ""
 									}
 ,
-									"rnbo_serial" : 4,
+									"rnbo_serial" : 2,
 									"rnbo_uniqueid" : "polyTolerance",
 									"rnboinfo" : 									{
 										"needsInstanceInfo" : 1,
@@ -970,11 +1416,11 @@
 									"rnbo_classname" : "number~",
 									"rnbo_extra_attributes" : 									{
 										"interval" : 100.0,
-										"displaymode" : "first",
-										"initialMode" : "monitor"
+										"initialMode" : "monitor",
+										"displaymode" : "first"
 									}
 ,
-									"rnbo_serial" : 2,
+									"rnbo_serial" : 1,
 									"rnbo_uniqueid" : "number~_obj-10",
 									"sig" : 0.0
 								}
@@ -996,11 +1442,11 @@
 									"rnbo_classname" : "number~",
 									"rnbo_extra_attributes" : 									{
 										"interval" : 100.0,
-										"displaymode" : "first",
-										"initialMode" : "monitor"
+										"initialMode" : "monitor",
+										"displaymode" : "first"
 									}
 ,
-									"rnbo_serial" : 1,
+									"rnbo_serial" : 2,
 									"rnbo_uniqueid" : "number~_obj-15",
 									"sig" : 0.0
 								}
@@ -1015,7 +1461,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 12.0, 123.0, 159.0, 23.0 ],
 									"rnbo_classname" : "setparam",
-									"rnbo_serial" : 1,
+									"rnbo_serial" : 3,
 									"rnbo_uniqueid" : "setparam_obj-11",
 									"rnboinfo" : 									{
 										"needsInstanceInfo" : 1,
@@ -1075,22 +1521,22 @@
 									"patching_rect" : [ 12.0, 79.0, 178.0, 37.0 ],
 									"rnbo_classname" : "param",
 									"rnbo_extra_attributes" : 									{
-										"exponent" : 1.0,
+										"displayorder" : "-",
 										"ctlin" : 0.0,
 										"sendinit" : 1,
-										"fromnormalized" : "",
-										"displayname" : "",
-										"meta" : "",
-										"unit" : "",
-										"displayorder" : "-",
-										"steps" : 0.0,
 										"enum" : "",
+										"unit" : "",
+										"meta" : "",
+										"steps" : 0.0,
 										"order" : "0",
-										"tonormalized" : "",
-										"preset" : 1
+										"fromnormalized" : "",
+										"exponent" : 1.0,
+										"preset" : 1,
+										"displayname" : "",
+										"tonormalized" : ""
 									}
 ,
-									"rnbo_serial" : 1,
+									"rnbo_serial" : 3,
 									"rnbo_uniqueid" : "overtoneThreshold",
 									"rnboinfo" : 									{
 										"needsInstanceInfo" : 1,
@@ -1515,11 +1961,11 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 91.0, 297.0, 43.0, 23.0 ],
+									"patching_rect" : [ 59.333333333333343, 297.0, 43.0, 23.0 ],
 									"rnbo_classname" : "out~",
 									"rnbo_extra_attributes" : 									{
-										"comment" : "",
-										"meta" : ""
+										"meta" : "",
+										"comment" : ""
 									}
 ,
 									"rnbo_serial" : 1,
@@ -1618,8 +2064,8 @@
 									"patching_rect" : [ 12.0, 297.0, 43.0, 23.0 ],
 									"rnbo_classname" : "out~",
 									"rnbo_extra_attributes" : 									{
-										"comment" : "",
-										"meta" : ""
+										"meta" : "",
+										"comment" : ""
 									}
 ,
 									"rnbo_serial" : 2,
@@ -1718,7 +2164,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 11.0, 196.0, 107.0, 23.0 ],
 									"rnbo_classname" : "setparam",
-									"rnbo_serial" : 2,
+									"rnbo_serial" : 4,
 									"rnbo_uniqueid" : "setparam_obj-6",
 									"rnboinfo" : 									{
 										"needsInstanceInfo" : 1,
@@ -1778,22 +2224,22 @@
 									"patching_rect" : [ 11.0, 152.5, 178.0, 37.0 ],
 									"rnbo_classname" : "param",
 									"rnbo_extra_attributes" : 									{
-										"exponent" : 1.0,
+										"displayorder" : "-",
 										"ctlin" : 0.0,
 										"sendinit" : 1,
-										"fromnormalized" : "",
-										"displayname" : "",
-										"meta" : "",
-										"unit" : "",
-										"displayorder" : "-",
-										"steps" : 0.0,
 										"enum" : "",
+										"unit" : "",
+										"meta" : "",
+										"steps" : 0.0,
 										"order" : "0",
-										"tonormalized" : "",
-										"preset" : 1
+										"fromnormalized" : "",
+										"exponent" : 1.0,
+										"preset" : 1,
+										"displayname" : "",
+										"tonormalized" : ""
 									}
 ,
-									"rnbo_serial" : 2,
+									"rnbo_serial" : 4,
 									"rnbo_uniqueid" : "Q_factor",
 									"rnboinfo" : 									{
 										"needsInstanceInfo" : 1,
@@ -2238,15 +2684,15 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 194.0, 7.0, 161.0, 23.0 ],
+									"patching_rect" : [ 373.0, 7.0, 161.0, 23.0 ],
 									"rnbo_classname" : "buffer~",
 									"rnbo_extra_attributes" : 									{
-										"meta" : "",
 										"samplerate" : 0.0,
+										"meta" : "",
 										"type" : "",
+										"file" : "",
 										"preset" : 0,
-										"fill" : "",
-										"file" : ""
+										"fill" : ""
 									}
 ,
 									"rnbo_serial" : 1,
@@ -2576,11 +3022,11 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 91.0, 231.0, 35.0, 23.0 ],
+									"patching_rect" : [ 154.0, 231.0, 35.0, 23.0 ],
 									"rnbo_classname" : "in~",
 									"rnbo_extra_attributes" : 									{
-										"comment" : "",
-										"meta" : ""
+										"meta" : "",
+										"comment" : ""
 									}
 ,
 									"rnbo_serial" : 1,
@@ -2679,8 +3125,8 @@
 									"patching_rect" : [ 12.0, 231.0, 35.0, 23.0 ],
 									"rnbo_classname" : "in~",
 									"rnbo_extra_attributes" : 									{
-										"comment" : "",
-										"meta" : ""
+										"meta" : "",
+										"comment" : ""
 									}
 ,
 									"rnbo_serial" : 2,
@@ -2815,10 +3261,10 @@
 													"box" : 													{
 														"maxclass" : "newobj",
 														"text" : "out 4",
-														"numinlets" : 1,
 														"numoutlets" : 0,
-														"patching_rect" : [ 485.0, 688.0, 35.0, 22.0 ],
-														"id" : "obj-7"
+														"patching_rect" : [ 689.0, 684.0, 35.0, 22.0 ],
+														"id" : "obj-7",
+														"numinlets" : 1
 													}
 
 												}
@@ -2826,10 +3272,10 @@
 													"box" : 													{
 														"maxclass" : "newobj",
 														"text" : "out 3",
-														"numinlets" : 1,
 														"numoutlets" : 0,
-														"patching_rect" : [ 380.0, 688.0, 35.0, 22.0 ],
-														"id" : "obj-6"
+														"patching_rect" : [ 466.666666666666686, 684.0, 35.0, 22.0 ],
+														"id" : "obj-6",
+														"numinlets" : 1
 													}
 
 												}
@@ -2837,10 +3283,10 @@
 													"box" : 													{
 														"maxclass" : "newobj",
 														"text" : "out 2",
-														"numinlets" : 1,
 														"numoutlets" : 0,
-														"patching_rect" : [ 315.0, 688.0, 35.0, 22.0 ],
-														"id" : "obj-4"
+														"patching_rect" : [ 244.333333333333343, 684.0, 35.0, 22.0 ],
+														"id" : "obj-4",
+														"numinlets" : 1
 													}
 
 												}
@@ -2848,25 +3294,25 @@
 													"box" : 													{
 														"maxclass" : "newobj",
 														"text" : "out 1",
-														"numinlets" : 1,
 														"numoutlets" : 0,
 														"patching_rect" : [ 22.0, 684.0, 35.0, 22.0 ],
-														"id" : "obj-3"
+														"id" : "obj-3",
+														"numinlets" : 1
 													}
 
 												}
 , 												{
 													"box" : 													{
 														"maxclass" : "codebox",
-														"fontface" : 0,
-														"numinlets" : 2,
 														"numoutlets" : 4,
-														"patching_rect" : [ 22.0, 50.0, 699.0, 615.0 ],
-														"fontsize" : 12.0,
-														"outlettype" : [ "", "", "", "" ],
 														"fontname" : "<Monospaced>",
+														"patching_rect" : [ 22.0, 50.0, 686.0, 615.0 ],
+														"outlettype" : [ "", "", "", "" ],
+														"fontface" : 0,
 														"id" : "obj-5",
-														"code" : "overtoneMask(CurrentMaxData, OvertoneThreshold, PolyTolerance, OutputBuff, \r\nnum, overtone){\r\n\tCurrentMaxAmp, _ = peek(CurrentMaxData, num, 0);\r\n\tCurrentMaxIndex, _ = peek(CurrentMaxData, num, 1);\r\n\tharmonicAmp, harmonicIndex = peek(OutputBuff, CurrentMaxIndex + overtone, \r\n\tboundmode = \"ignore\");\r\n\tif(CurrentMaxAmp * (OvertoneThreshold * 0.01) < harmonicAmp &&\r\n\t   (abs(CurrentMaxAmp - harmonicAmp) / harmonicAmp) > PolyTolerance * 0.01){\r\n\t\t//Cut energy consumption by 80%\r\n\t\tpoke(OutputBuff, harmonicAmp * 0.2, harmonicIndex);\r\n\t}\r\n\treturn 0;\r\n}\r\n\r\nParam Q_factor(0);\r\nParam overtoneThreshold(0);\r\nParam polyTolerance(0);\r\nBuffer outputBuff(\"OutputBuff\");\r\nData countBuff(88, 2);\r\nData phaseBuff(88, 2);\r\nData sumCosBuff(88, 2);\r\nData sumSinBuff(88, 2);\r\nData currentMaxData(2, 2);//amp, index\r\nData workingMaxData(2, 2);//amp, index\r\n\r\n\r\nQ = 1 / (pow(2, 1 / 12) - 1) * Q_factor;\r\nsumInput = (in1 + in2) * 0.5;\r\n\r\nfor(k = 0; k < 88; k += 1) {\r\n    freq = mtof(k + 21);\t\r\n\twinLength = Q * (samplerate / freq);\r\n\t\r\n\t//Time variation (gradient) of phase\r\n\tphaseStep = twopi * freq / samplerate;\r\n\t\r\n \tcount1A, count2A = peek(countBuff, k, 0);\r\n\tcount1B, count2B = peek(countBuff, k, 1); \r\n\tcosFuncA = cos(twopi * count1A / (winLength - 1));\r\n\tcosFuncB = cos(twopi * (count1B - (winLength / 2)) / (winLength - 1));\r\n\twinFuncA = 0.5 - 0.5 * cosFuncA;\r\n\twinFuncB = 0.5 - 0.5 * cosFuncB;\r\n\t\r\n\tphase1A, phase2A = peek(phaseBuff, k, 0);\r\n\tphase1B, phase2B = peek(phaseBuff, k, 1);\r\n\t\t\t\t\r\n\tsumCos1A, sumCos2A = peek(sumCosBuff, k, 0);\r\n\tpoke(sumCosBuff, sumCos1A + sumInput * winFuncA * cos(phase1A), k, 0);\r\n\tsumCos1B, sumCos2B = peek(sumCosBuff, k, 1);\r\n\tpoke(sumCosBuff, sumCos1B + sumInput * winFuncB * cos(phase1B), k, 1);\r\n\r\n\tsumSin1A, sumSin2A = peek(sumSinBuff, k, 0);\r\n\tpoke(sumSinBuff, sumSin1A + sumInput * winFuncA * sin(phase1A), k, 0);\r\n    sumSin1B, sumSin2B = peek(sumSinBuff, k, 1);\r\n\tpoke(sumSinBuff, sumSin1B + sumInput * winFuncB * sin(phase1B), k, 1);\r\n\t\t\r\n\tif(count1A > winLength){\t\t\r\n\t    lastAmpA = (cartopol(sumCos1A, sumSin1A) / winLength) * 4.0;\r\n\t\tpoke(outputBuff, lastAmpA, k);\r\n\t\t\r\n\t\tif(k == 0){//Select the largest amplitude after all loops have completed.\r\n\t\t\tfor(i = 0; i <= 1; i += 1) {\r\n\t\t\tcurrentMaxAmp, _ = peek(workingMaxData, i, 0);\r\n\t\t\tpoke(currentMaxData, currentMaxAmp, i, 0);\r\n\t\t\tcurrentMaxIndex, _ = peek(workingMaxData, i, 1);\r\n\t\t\tpoke(currentMaxData, currentMaxIndex, i, 1);\r\n\t\t\tpoke(workingMaxData, 0, i, 0);\r\n\t\t\tpoke(workingMaxData, 0, i, 1);\r\n\t\t\t}\r\n\t\t}\r\n\t\t\r\n\t\tworkingMaxAmp, _ = peek(workingMaxData, 0, 0);\n\t\tworkingMaxIndex, _ = peek(workingMaxData, 0, 1);\n\t\tworking2ndAmp, _ = peek(workingMaxData, 1, 0);\n\t\tworking2ndIndex, _ = peek(workingMaxData, 1, 1);\n\n\t\tif(k == workingMaxIndex){\n    \t\tpoke(workingMaxData, lastAmpA, 0, 0);\n    \t\tpoke(workingMaxData, k, 0, 1);\n\t\t} else if(k == working2ndIndex){\n    \t\tpoke(workingMaxData, lastAmpA, 1, 0);\n    \t\tpoke(workingMaxData, k, 1, 1);\n\t\t} else if(lastAmpA > workingMaxAmp){\n    \t\tpoke(workingMaxData, workingMaxAmp, 1, 0);\n    \t\tpoke(workingMaxData, workingMaxIndex, 1, 1);\n    \t\tpoke(workingMaxData, lastAmpA, 0, 0);\n    \t\tpoke(workingMaxData, k, 0, 1);\n\t\t} else if(lastAmpA > working2ndAmp){\n    \t\tpoke(workingMaxData, lastAmpA, 1, 0);\n    \t\tpoke(workingMaxData, k, 1, 1);\n\t\t}\r\n\t\t\r\n\t\tpoke(sumCosBuff, 0, k, 0);\r\n\t\tpoke(sumSinBuff, 0, k, 0);\r\n\t\tpoke(countBuff, 0, k, 0);\r\n\t\tpoke(phaseBuff, 0, k, 0);\t\r\n\t}else{\r\n        poke(countBuff, count1A + 1, k, 0);\r\n\t\tpoke(phaseBuff, phase1A + phaseStep, k, 0);\r\n\t}\r\n\t\r\n\tif(count1B > winLength + (winLength / 2)){\t\r\n\t\tlastAmpB = (cartopol(sumCos1B, sumSin1B) / winLength) * 4.0;\r\n\t\tpoke(outputBuff, lastAmpB, k);\r\n\t\t\r\n\t\t\r\n\t\tif(k == 0){//Select the largest amplitude after all loops have completed.\r\n\t\t\tfor(i = 0; i <= 1; i += 1) {\r\n\t\t\tcurrentMaxAmp, _ = peek(workingMaxData, i, 0);\r\n\t\t\tpoke(currentMaxData, currentMaxAmp, i, 0);\r\n\t\t\tcurrentMaxIndex, _ = peek(workingMaxData, i, 1);\r\n\t\t\tpoke(currentMaxData, currentMaxIndex, i, 1);\r\n\t\t\tpoke(workingMaxData, 0, i, 0);\r\n\t\t\tpoke(workingMaxData, 0, i, 1);\r\n\t\t\t}\r\n\t\t}\r\n\t\t\r\n\t\tworkingMaxAmp, _ = peek(workingMaxData, 0, 0);\n\t\tworkingMaxIndex, _ = peek(workingMaxData, 0, 1);\n\t\tworking2ndAmp, _ = peek(workingMaxData, 1, 0);\n\t\tworking2ndIndex, _ = peek(workingMaxData, 1, 1);\n\n\t\tif(k == workingMaxIndex){\n    \t\tpoke(workingMaxData, lastAmpB, 0, 0);\n    \t\tpoke(workingMaxData, k, 0, 1);\n\t\t} else if(k == working2ndIndex){\n    \t\tpoke(workingMaxData, lastAmpB, 1, 0);\n    \t\tpoke(workingMaxData, k, 1, 1);\n\t\t} else if(lastAmpB > workingMaxAmp){\n    \t\tpoke(workingMaxData, workingMaxAmp, 1, 0);\n    \t\tpoke(workingMaxData, workingMaxIndex, 1, 1);\n    \t\tpoke(workingMaxData, lastAmpB, 0, 0);\n    \t\tpoke(workingMaxData, k, 0, 1);\n\t\t} else if(lastAmpB > working2ndAmp){\n    \t\tpoke(workingMaxData, lastAmpB, 1, 0);\n    \t\tpoke(workingMaxData, k, 1, 1);\n\t\t}\r\n\r\n\t\t\r\n\t\tpoke(sumCosBuff, 0, k, 1);\r\n\t\tpoke(sumSinBuff, 0, k, 1);\r\n\t\tpoke(countBuff, (winLength / 2), k, 1);\r\n\t\tpoke(phaseBuff, 0, k, 1);\r\n\t}else{\r\n        poke(countBuff, count1B + 1, k, 1);\r\n\t\tpoke(phaseBuff, phase1B + phaseStep, k, 1);\r\n\t}\r\n}\r\n\r\nfor(i = 0; i <= 1; i += 1) {\r\n\t//One octave \r\n\tovertoneMask(currentMaxData, overtoneThreshold, polyTolerance, outputBuff, i, 12);\r\n\t//One octave + perfect 5th;\r\n\tovertoneMask(currentMaxData, overtoneThreshold, polyTolerance, outputBuff, i, 19);\r\n\t//Two octave \r\n\tovertoneMask(currentMaxData, overtoneThreshold, polyTolerance, outputBuff, i, 24);\r\n\t//Two octave +  major 3rd\r\n\tovertoneMask(currentMaxData, overtoneThreshold, polyTolerance, outputBuff, i, 28);\r\n}\r\nout1 = in1;\r\nout2 = in2;\r\ncurrentMaxIndex1, _ = peek(currentMaxData, 0, 1);\r\ncurrentMaxIndex2, _ = peek(currentMaxData, 1, 1);\r\nout3 = currentMaxIndex1 + 21;\r\nout4 = currentMaxIndex2 + 21;\r\n//out3 = harmonicAmp1;"
+														"fontsize" : 12.0,
+														"numinlets" : 2,
+														"code" : "updateMax(k, lastAmp, WorkingData){\r\n    workingMaxAmp, _ = peek(WorkingData, 0, 0);\n    workingMaxIndex, _ = peek(WorkingData, 0, 1);\n    working2ndAmp, _ = peek(WorkingData, 1, 0);\n    working2ndIndex, _ = peek(WorkingData, 1, 1);\n    working3rdAmp, _ = peek(WorkingData, 2, 0);\n    working3rdIndex, _ = peek(WorkingData, 2, 1);\n    working4thAmp, _ = peek(WorkingData, 3, 0);\n    working4thIndex, _ = peek(WorkingData, 3, 1);\n    working5thAmp, _ = peek(WorkingData, 4, 0);\n    working5thIndex, _ = peek(WorkingData, 4, 1);\n    working6thAmp, _ = peek(WorkingData, 5, 0);\n    working6thIndex, _ = peek(WorkingData, 5, 1);\n\n    if(k == workingMaxIndex){\n        // Same bin as the 1st place → Simply update in place (no shifting)\n        poke(WorkingData, lastAmp, 0, 0);\n        poke(WorkingData, k, 0, 1);\n    } else if(k == working2ndIndex){\n        // Same bin as 2nd place → Just update it in place\n        poke(WorkingData, lastAmp, 1, 0);\n        poke(WorkingData, k, 1, 1);\n    } else if(k == working3rdIndex){\n        poke(WorkingData, lastAmp, 2, 0);\n        poke(WorkingData, k, 2, 1);\n    } else if(k == working4thIndex){\n        poke(WorkingData, lastAmp, 3, 0);\n        poke(WorkingData, k, 3, 1);\n    } else if(k == working5thIndex){\n        poke(WorkingData, lastAmp, 4, 0);\n        poke(WorkingData, k, 4, 1);\n    } else if(k == working6thIndex){\n        poke(WorkingData, lastAmp, 5, 0);\n        poke(WorkingData, k, 5, 1);\n    } else if(lastAmp > workingMaxAmp){\n        // New bin surpassed the 1st place → Demote current 1st place to 2nd, \n        // set new value to 1st place\n        poke(WorkingData, working5thAmp, 5, 0);\n        poke(WorkingData, working5thIndex, 5, 1);\n        poke(WorkingData, working4thAmp, 4, 0);\n        poke(WorkingData, working4thIndex, 4, 1);\n        poke(WorkingData, working3rdAmp, 3, 0);\n        poke(WorkingData, working3rdIndex, 3, 1);\n        poke(WorkingData, working2ndAmp, 2, 0);\n        poke(WorkingData, working2ndIndex, 2, 1);\n        poke(WorkingData, workingMaxAmp, 1, 0);\n        poke(WorkingData, workingMaxIndex, 1, 1);\n        poke(WorkingData, lastAmp, 0, 0);\n        poke(WorkingData, k, 0, 1);\n    } else if(lastAmp > working2ndAmp){\n        poke(WorkingData, working5thAmp, 5, 0);\n        poke(WorkingData, working5thIndex, 5, 1);\n        poke(WorkingData, working4thAmp, 4, 0);\n        poke(WorkingData, working4thIndex, 4, 1);\n        poke(WorkingData, working3rdAmp, 3, 0);\n        poke(WorkingData, working3rdIndex, 3, 1);\n        poke(WorkingData, working2ndAmp, 2, 0);\n        poke(WorkingData, working2ndIndex, 2, 1);\n        poke(WorkingData, lastAmp, 1, 0);\n        poke(WorkingData, k, 1, 1);\n    } else if(lastAmp > working3rdAmp){\n        poke(WorkingData, working5thAmp, 5, 0);\n        poke(WorkingData, working5thIndex, 5, 1);\n        poke(WorkingData, working4thAmp, 4, 0);\n        poke(WorkingData, working4thIndex, 4, 1);\n        poke(WorkingData, working3rdAmp, 3, 0);\n        poke(WorkingData, working3rdIndex, 3, 1);\n        poke(WorkingData, lastAmp, 2, 0);\n        poke(WorkingData, k, 2, 1);\n    } else if(lastAmp > working4thAmp){\n        poke(WorkingData, working5thAmp, 5, 0);\n        poke(WorkingData, working5thIndex, 5, 1);\n        poke(WorkingData, working4thAmp, 4, 0);\n        poke(WorkingData, working4thIndex, 4, 1);\n        poke(WorkingData, lastAmp, 3, 0);\n        poke(WorkingData, k, 3, 1);\n    } else if(lastAmp > working5thAmp){\n        poke(WorkingData, working5thAmp, 5, 0);\n        poke(WorkingData, working5thIndex, 5, 1);\n        poke(WorkingData, lastAmp, 4, 0);\n        poke(WorkingData, k, 4, 1);\n    } else if(lastAmp > working6thAmp){\n        poke(WorkingData, lastAmp, 5, 0);\n        poke(WorkingData, k, 5, 1);\n    }\r\n\treturn 0;\n}\r\n\r\n\r\ncommitMax(CurrentData, WorkingData){\n    for(i = 0; i < dim(WorkingData); i += 1) {\n        currentMaxAmp, _ = peek(WorkingData, i, 0);\n        poke(CurrentData, currentMaxAmp, i, 0);\n        currentMaxIndex, _ = peek(WorkingData, i, 1);\n        poke(CurrentData, currentMaxIndex, i, 1);\n        poke(WorkingData, 0, i, 0);\n        poke(WorkingData, 0, i, 1);\n    }\n    return 0;\n}\r\n\r\novertoneMask(CurrentMaxData, OvertoneThreshold, PolyTolerance, OutputBuff, \r\nnum, overtone){\r\n\tCurrentMaxAmp, _ = peek(CurrentMaxData, num, 0);\r\n\tCurrentMaxIndex, _ = peek(CurrentMaxData, num, 1);\r\n\tharmonicAmp, harmonicIndex = peek(OutputBuff, CurrentMaxIndex + overtone, \r\n\tboundmode = \"ignore\");\r\n\tif(CurrentMaxAmp * (OvertoneThreshold * 0.01) < harmonicAmp &&\r\n\t   (abs(CurrentMaxAmp - harmonicAmp) / harmonicAmp) > PolyTolerance * 0.01){\r\n\t\tpoke(OutputBuff, harmonicAmp * 0, harmonicIndex);\r\n\t}\r\n\treturn 0;\r\n}\r\n\r\nParam Q_factor(0);\r\nParam overtoneThreshold(0);\r\nParam polyTolerance(0);\r\nParam noiseFloor(0);\r\nBuffer outputBuff(\"OutputBuff\");\r\nData countBuff(88, 2);\r\nData phaseBuff(88, 2);\r\nData sumCosBuff(88, 2);\r\nData sumSinBuff(88, 2);\r\nData currentData(6, 2);//amp, index\r\nData workingData(6, 2);//amp, index\r\n\r\n\r\nQ = 1 / (pow(2, 1 / 12) - 1) * Q_factor;\r\nsumInput = (in1 + in2) * 0.5;\r\n\r\nfor(k = 0; k < 88; k += 1) {\r\n    freq = mtof(k + 21);\t\r\n\twinLength = Q * (samplerate / freq);\r\n\t\r\n\t//Time variation (gradient) of phase\r\n\tphaseStep = twopi * freq / samplerate;\r\n\t\r\n \tcount1A, count2A = peek(countBuff, k, 0);\r\n\tcount1B, count2B = peek(countBuff, k, 1); \r\n\tcosFuncA = cos(twopi * count1A / (winLength - 1));\r\n\tcosFuncB = cos(twopi * (count1B - (winLength / 2)) / (winLength - 1));\r\n\twinFuncA = 0.5 - 0.5 * cosFuncA;\r\n\twinFuncB = 0.5 - 0.5 * cosFuncB;\r\n\t\r\n\tphase1A, phase2A = peek(phaseBuff, k, 0);\r\n\tphase1B, phase2B = peek(phaseBuff, k, 1);\r\n\t\t\t\t\r\n\tsumCos1A, sumCos2A = peek(sumCosBuff, k, 0);\r\n\tpoke(sumCosBuff, sumCos1A + sumInput * winFuncA * cos(phase1A), k, 0);\r\n\tsumCos1B, sumCos2B = peek(sumCosBuff, k, 1);\r\n\tpoke(sumCosBuff, sumCos1B + sumInput * winFuncB * cos(phase1B), k, 1);\r\n\r\n\tsumSin1A, sumSin2A = peek(sumSinBuff, k, 0);\r\n\tpoke(sumSinBuff, sumSin1A + sumInput * winFuncA * sin(phase1A), k, 0);\r\n    sumSin1B, sumSin2B = peek(sumSinBuff, k, 1);\r\n\tpoke(sumSinBuff, sumSin1B + sumInput * winFuncB * sin(phase1B), k, 1);\r\n\t\r\n\t//1st Window---------------------------------------------------------------\t\t\r\n\tif(count1A > winLength){\t\t\r\n\t    lastAmpA = (cartopol(sumCos1A, sumSin1A) / winLength) * 4.0;\r\n//\t\tif(lastAmpA < noiseFloor * 0.01){\r\n//\t\t\tlastAmpA = 0;\r\n//\t\t}\r\n\t\t\r\n\t\tpoke(outputBuff, lastAmpA, k);\r\n\t\t\r\n\t\tif(k == 0){//Select the largest amplitude after all loops have completed.\r\n\t\t\tcommitMax(currentData, workingData);\r\n\t\t}\r\n\t\t\r\n\t\tupdateMax(k, lastAmpA, workingData);\r\n\t\t\r\n\t\tpoke(sumCosBuff, 0, k, 0);\r\n\t\tpoke(sumSinBuff, 0, k, 0);\r\n\t\tpoke(countBuff, 0, k, 0);\r\n\t\tpoke(phaseBuff, 0, k, 0);\t\r\n\t}else{\r\n        poke(countBuff, count1A + 1, k, 0);\r\n\t\tpoke(phaseBuff, phase1A + phaseStep, k, 0);\r\n\t}\r\n\t\r\n\t//2nd Window---------------------------------------------------------------\t\r\n\tif(count1B > winLength + (winLength / 2)){\t\r\n\t\tlastAmpB = (cartopol(sumCos1B, sumSin1B) / winLength) * 4.0;\r\n\t\t\r\n//\t\tif(lastAmpB < noiseFloor * 0.01){\r\n//\t\t\tlastAmpB = 0;\r\n//\t\t}\r\n\t\t\r\n\t\tpoke(outputBuff, lastAmpB, k);\r\n\t\t\r\n\t\tif(k == 0){//Select the largest amplitude after all loops have completed.\r\n\t\t\tcommitMax(currentData, workingData);\r\n\t\t}\r\n\t\t\r\n\t\tpoke(sumCosBuff, 0, k, 1);\r\n\t\tpoke(sumSinBuff, 0, k, 1);\r\n\t\tpoke(countBuff, (winLength / 2), k, 1);\r\n\t\tpoke(phaseBuff, 0, k, 1);\r\n\t}else{\r\n        poke(countBuff, count1B + 1, k, 1);\r\n\t\tpoke(phaseBuff, phase1B + phaseStep, k, 1);\r\n\t}\r\n}\r\n\r\nfor(i = 0; i <= 1; i += 1) {\r\n\t//One octave \r\n\tovertoneMask(currentData, overtoneThreshold, polyTolerance, outputBuff, i, 12);\r\n\t//One octave + perfect 5th;\r\n\tovertoneMask(currentData, overtoneThreshold, polyTolerance, outputBuff, i, 19);\r\n\t//Two octave \r\n\tovertoneMask(currentData, overtoneThreshold, polyTolerance, outputBuff, i, 24);\r\n\t//Two octave +  major 3rd\r\n\tovertoneMask(currentData, overtoneThreshold, polyTolerance, outputBuff, i, 28);\r\n}\r\nout1 = in1;\r\nout2 = in2;\r\ncurrentMaxIndex1, _ = peek(currentData, 0, 1);\r\ncurrentMaxIndex2, _ = peek(currentData, 1, 1);\r\nout3 = currentMaxIndex1 + 21;\r\nout4 = currentMaxIndex2 + 21;"
 													}
 
 												}
@@ -2874,11 +3320,11 @@
 													"box" : 													{
 														"maxclass" : "newobj",
 														"text" : "in 1",
-														"numinlets" : 0,
 														"numoutlets" : 1,
 														"patching_rect" : [ 22.0, 14.0, 28.0, 22.0 ],
 														"outlettype" : [ "" ],
-														"id" : "obj-1"
+														"id" : "obj-1",
+														"numinlets" : 0
 													}
 
 												}
@@ -2886,40 +3332,19 @@
 													"box" : 													{
 														"maxclass" : "newobj",
 														"text" : "in 2",
-														"numinlets" : 0,
 														"numoutlets" : 1,
-														"patching_rect" : [ 702.0, 14.0, 28.0, 22.0 ],
+														"patching_rect" : [ 689.0, 14.0, 28.0, 22.0 ],
 														"outlettype" : [ "" ],
-														"id" : "obj-2"
+														"id" : "obj-2",
+														"numinlets" : 0
 													}
 
 												}
  ],
 											"lines" : [ 												{
 													"patchline" : 													{
-														"source" : [ "obj-5", 3 ],
-														"destination" : [ "obj-7", 0 ]
-													}
-
-												}
-, 												{
-													"patchline" : 													{
-														"source" : [ "obj-5", 2 ],
-														"destination" : [ "obj-6", 0 ]
-													}
-
-												}
-, 												{
-													"patchline" : 													{
-														"source" : [ "obj-2", 0 ],
-														"destination" : [ "obj-5", 1 ]
-													}
-
-												}
-, 												{
-													"patchline" : 													{
-														"source" : [ "obj-1", 0 ],
-														"destination" : [ "obj-5", 0 ]
+														"source" : [ "obj-5", 0 ],
+														"destination" : [ "obj-3", 0 ]
 													}
 
 												}
@@ -2932,8 +3357,29 @@
 												}
 , 												{
 													"patchline" : 													{
-														"source" : [ "obj-5", 0 ],
-														"destination" : [ "obj-3", 0 ]
+														"source" : [ "obj-1", 0 ],
+														"destination" : [ "obj-5", 0 ]
+													}
+
+												}
+, 												{
+													"patchline" : 													{
+														"source" : [ "obj-2", 0 ],
+														"destination" : [ "obj-5", 1 ]
+													}
+
+												}
+, 												{
+													"patchline" : 													{
+														"source" : [ "obj-5", 2 ],
+														"destination" : [ "obj-6", 0 ]
+													}
+
+												}
+, 												{
+													"patchline" : 													{
+														"source" : [ "obj-5", 3 ],
+														"destination" : [ "obj-7", 0 ]
 													}
 
 												}
@@ -2947,7 +3393,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 4,
 									"outlettype" : [ "signal", "signal", "signal", "signal" ],
-									"patching_rect" : [ 12.0, 263.0, 98.0, 23.0 ],
+									"patching_rect" : [ 12.0, 263.0, 161.0, 23.0 ],
 									"rnbo_classname" : "gen~",
 									"rnbo_extra_attributes" : 									{
 										"exposeparams" : 0
@@ -3102,7 +3548,7 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-10", 0 ],
-									"midpoints" : [ 100.5, 296.0, 176.0, 296.0, 176.0, 259.0, 365.5, 259.0 ],
+									"midpoints" : [ 163.5, 296.0, 189.0, 296.0, 189.0, 259.0, 365.5, 259.0 ],
 									"source" : [ "obj-1", 3 ]
 								}
 
@@ -3110,7 +3556,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-15", 0 ],
-									"midpoints" : [ 74.166666666666657, 296.0, 138.833333333333314, 296.0, 138.833333333333314, 259.0, 203.5, 259.0 ],
+									"midpoints" : [ 116.166666666666671, 296.0, 189.833333333333314, 296.0, 189.833333333333314, 259.0, 203.5, 259.0 ],
 									"source" : [ "obj-1", 2 ]
 								}
 
@@ -3140,6 +3586,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-11", 0 ],
 									"source" : [ "obj-12", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-8", 0 ],
+									"source" : [ "obj-13", 0 ]
 								}
 
 							}
@@ -3180,6 +3633,14 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"midpoints" : [ 203.5, 227.0, 21.5, 227.0 ],
+									"source" : [ "obj-8", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-6", 0 ],
 									"source" : [ "obj-9", 0 ]
 								}
@@ -3200,10 +3661,16 @@
 						"bgfillcolor_autogradient" : 0.0
 					}
 ,
-					"patching_rect" : [ 17.0, 131.0, 71.0, 22.0 ],
+					"patching_rect" : [ 17.0, 131.0, 84.5, 22.0 ],
 					"rnboattrcache" : 					{
 						"overtoneThreshold" : 						{
 							"label" : "overtoneThreshold",
+							"isEnum" : 0,
+							"parsestring" : ""
+						}
+,
+						"noiseFloor" : 						{
+							"label" : "noiseFloor",
 							"isEnum" : 0,
 							"parsestring" : ""
 						}
@@ -3250,8 +3717,12 @@
 						"subtype" : "Undefined",
 						"embed" : 1,
 						"snapshot" : 						{
+							"noiseFloor" : 							{
+								"value" : 5.0
+							}
+,
 							"overtoneThreshold" : 							{
-								"value" : 80.0
+								"value" : 50.0
 							}
 ,
 							"polyTolerance" : 							{
@@ -3259,7 +3730,7 @@
 							}
 ,
 							"Q_factor" : 							{
-								"value" : 1.95
+								"value" : 1.5
 							}
 ,
 							"__presetid" : "839644f7-7529-11f1-84f7-acde48001122"
@@ -3277,8 +3748,12 @@
 									"subtype" : "",
 									"embed" : 0,
 									"snapshot" : 									{
+										"noiseFloor" : 										{
+											"value" : 5.0
+										}
+,
 										"overtoneThreshold" : 										{
-											"value" : 80.0
+											"value" : 50.0
 										}
 ,
 										"polyTolerance" : 										{
@@ -3286,7 +3761,7 @@
 										}
 ,
 										"Q_factor" : 										{
-											"value" : 1.95
+											"value" : 1.5
 										}
 ,
 										"__presetid" : "839644f7-7529-11f1-84f7-acde48001122"
@@ -3328,29 +3803,15 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-13", 0 ],
-					"source" : [ "obj-10", 0 ]
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-14", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-12", 0 ],
-					"source" : [ "obj-11", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-28", 0 ],
-					"source" : [ "obj-12", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-6", 0 ],
-					"source" : [ "obj-13", 0 ]
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-15", 0 ]
 				}
 
 			}
@@ -3363,7 +3824,14 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-3", 0 ],
+					"destination" : [ "obj-22", 0 ],
+					"source" : [ "obj-19", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-23", 0 ],
 					"source" : [ "obj-19", 0 ]
 				}
 
@@ -3384,8 +3852,29 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-32", 0 ],
-					"source" : [ "obj-28", 0 ]
+					"destination" : [ "obj-1", 1 ],
+					"source" : [ "obj-22", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-23", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 1 ],
+					"source" : [ "obj-25", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-25", 0 ]
 				}
 
 			}
@@ -3398,49 +3887,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-33", 0 ],
-					"source" : [ "obj-32", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-1", 1 ],
-					"midpoints" : [ 180.5, 261.0, 156.5, 261.0, 156.5, 120.0, 52.5, 120.0 ],
-					"order" : 0,
-					"source" : [ "obj-33", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-1", 0 ],
-					"midpoints" : [ 180.5, 261.0, 157.5, 261.0, 157.5, 120.0, 26.5, 120.0 ],
-					"order" : 1,
-					"source" : [ "obj-33", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-34", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-1", 1 ],
-					"order" : 0,
-					"source" : [ "obj-4", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-1", 0 ],
-					"order" : 1,
-					"source" : [ "obj-4", 0 ]
 				}
 
 			}
@@ -3453,22 +3901,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-4", 0 ],
-					"source" : [ "obj-6", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-18", 0 ],
 					"source" : [ "obj-8", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-10", 0 ],
-					"source" : [ "obj-9", 0 ]
 				}
 
 			}
@@ -3489,7 +3923,7 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "piano.wav",
+				"name" : "Inst 1.wav",
 				"bootpath" : "~/Downloads",
 				"patcherrelativepath" : "../../../../Downloads",
 				"type" : "WAVE",
