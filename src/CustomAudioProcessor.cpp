@@ -14,6 +14,12 @@ parameters(*this, nullptr, juce::Identifier("PARAMETERS"),
     juce::AudioProcessorValueTreeState::ParameterLayout {
     std::make_unique<juce::AudioParameterFloat>(ParameterID { "Q_factor",  1}, "Q_factor",
     juce::NormalisableRange<float>(1.f, 2.f, 0.01f, 1.f), 1.f),
+    std::make_unique<juce::AudioParameterFloat>(ParameterID { "noiseFloor",  2}, "noiseFloor",
+    juce::NormalisableRange<float>(0.f, 30.f, 0.1f, 1.f), 5.f),
+    std::make_unique<juce::AudioParameterFloat>(ParameterID { "overtoneThreshold",  3}, "overtoneThreshold",
+    juce::NormalisableRange<float>(10.f, 80.f, 1.f, 1.f), 50.f),
+    std::make_unique<juce::AudioParameterFloat>(ParameterID { "polyTolerance",  4}, "polyTolerance",
+    juce::NormalisableRange<float>(10.f, 50.f, 1.f, 1.f), 20.f),
     }
   )
 {

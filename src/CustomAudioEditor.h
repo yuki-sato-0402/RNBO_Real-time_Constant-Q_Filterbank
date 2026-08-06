@@ -10,19 +10,27 @@ public:
     void paint (Graphics& g) override;
     void resized() override; 
     typedef juce::AudioProcessorValueTreeState::SliderAttachment SliderAttachment;
-    typedef juce::AudioProcessorValueTreeState::ButtonAttachment ButtonAttachment;
-
 private:
     juce::AudioProcessorValueTreeState& valueTreeState; // ✅ Hold by reference
     CustomAudioProcessor& audioProcessor;
     
     juce::Slider Q_factorSlider;
+    juce::Slider overtoneThresholdSlider;
+    juce::Slider polyToleranceSlider;
+    juce::Slider noiseFloorSlider;
 
 
     juce::Label Q_factorLabel;
+    juce::Label overtoneThresholdLabel;
+    juce::Label polyToleranceLabel;
+    juce::Label noiseFloorLabel;
+
 
 
     std::unique_ptr<SliderAttachment> Q_factorSliderAttachment;
+    std::unique_ptr<SliderAttachment> overtoneThresholdSliderAttachment;
+    std::unique_ptr<SliderAttachment> polyToleranceSliderAttachment;
+    std::unique_ptr<SliderAttachment> noiseFloorSliderAttachment;
 
     SpectrogramDisplay spectrogramDisplay;
     

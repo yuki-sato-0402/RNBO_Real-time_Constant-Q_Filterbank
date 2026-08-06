@@ -447,25 +447,25 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 194.0, 7.0, 148.0, 37.0 ],
+									"patching_rect" : [ 194.0, 7.0, 143.0, 37.0 ],
 									"rnbo_classname" : "param",
 									"rnbo_extra_attributes" : 									{
-										"displayorder" : "-",
-										"ctlin" : 0.0,
 										"sendinit" : 1,
-										"enum" : "",
-										"unit" : "",
 										"meta" : "",
+										"displayname" : "",
+										"unit" : "",
+										"enum" : "",
+										"preset" : 1,
 										"steps" : 0.0,
 										"order" : "0",
 										"fromnormalized" : "",
+										"displayorder" : "-",
+										"ctlin" : 0.0,
 										"exponent" : 1.0,
-										"preset" : 1,
-										"displayname" : "",
 										"tonormalized" : ""
 									}
 ,
-									"rnbo_serial" : 1,
+									"rnbo_serial" : 6,
 									"rnbo_uniqueid" : "noiseFloor",
 									"rnboinfo" : 									{
 										"needsInstanceInfo" : 1,
@@ -483,7 +483,7 @@
 												"touched" : 0,
 												"inlet" : 1,
 												"type" : "number",
-												"defaultValue" : "15"
+												"defaultValue" : "5"
 											}
 ,
 											"normalizedvalue" : 											{
@@ -879,7 +879,7 @@
 										"changesPatcherIO" : 0
 									}
 ,
-									"text" : "param noiseFloor @min 5. @max 30. @value 15.",
+									"text" : "param noiseFloor @min 0. @max 30. @value 5.",
 									"varname" : "noiseFloor"
 								}
 
@@ -953,18 +953,18 @@
 									"patching_rect" : [ 12.0, 7.0, 166.0, 37.0 ],
 									"rnbo_classname" : "param",
 									"rnbo_extra_attributes" : 									{
-										"displayorder" : "-",
-										"ctlin" : 0.0,
 										"sendinit" : 1,
-										"enum" : "",
-										"unit" : "",
 										"meta" : "",
+										"displayname" : "",
+										"unit" : "",
+										"enum" : "",
+										"preset" : 1,
 										"steps" : 0.0,
 										"order" : "0",
 										"fromnormalized" : "",
+										"displayorder" : "-",
+										"ctlin" : 0.0,
 										"exponent" : 1.0,
-										"preset" : 1,
-										"displayname" : "",
 										"tonormalized" : ""
 									}
 ,
@@ -1416,8 +1416,8 @@
 									"rnbo_classname" : "number~",
 									"rnbo_extra_attributes" : 									{
 										"interval" : 100.0,
-										"initialMode" : "monitor",
-										"displaymode" : "first"
+										"displaymode" : "first",
+										"initialMode" : "monitor"
 									}
 ,
 									"rnbo_serial" : 1,
@@ -1442,8 +1442,8 @@
 									"rnbo_classname" : "number~",
 									"rnbo_extra_attributes" : 									{
 										"interval" : 100.0,
-										"initialMode" : "monitor",
-										"displaymode" : "first"
+										"displaymode" : "first",
+										"initialMode" : "monitor"
 									}
 ,
 									"rnbo_serial" : 2,
@@ -1521,18 +1521,18 @@
 									"patching_rect" : [ 12.0, 79.0, 178.0, 37.0 ],
 									"rnbo_classname" : "param",
 									"rnbo_extra_attributes" : 									{
-										"displayorder" : "-",
-										"ctlin" : 0.0,
 										"sendinit" : 1,
-										"enum" : "",
-										"unit" : "",
 										"meta" : "",
+										"displayname" : "",
+										"unit" : "",
+										"enum" : "",
+										"preset" : 1,
 										"steps" : 0.0,
 										"order" : "0",
 										"fromnormalized" : "",
+										"displayorder" : "-",
+										"ctlin" : 0.0,
 										"exponent" : 1.0,
-										"preset" : 1,
-										"displayname" : "",
 										"tonormalized" : ""
 									}
 ,
@@ -2224,18 +2224,18 @@
 									"patching_rect" : [ 11.0, 152.5, 178.0, 37.0 ],
 									"rnbo_classname" : "param",
 									"rnbo_extra_attributes" : 									{
-										"displayorder" : "-",
-										"ctlin" : 0.0,
 										"sendinit" : 1,
-										"enum" : "",
-										"unit" : "",
 										"meta" : "",
+										"displayname" : "",
+										"unit" : "",
+										"enum" : "",
+										"preset" : 1,
 										"steps" : 0.0,
 										"order" : "0",
 										"fromnormalized" : "",
+										"displayorder" : "-",
+										"ctlin" : 0.0,
 										"exponent" : 1.0,
-										"preset" : 1,
-										"displayname" : "",
 										"tonormalized" : ""
 									}
 ,
@@ -2687,11 +2687,11 @@
 									"patching_rect" : [ 373.0, 7.0, 161.0, 23.0 ],
 									"rnbo_classname" : "buffer~",
 									"rnbo_extra_attributes" : 									{
-										"samplerate" : 0.0,
 										"meta" : "",
-										"type" : "",
 										"file" : "",
 										"preset" : 0,
+										"type" : "",
+										"samplerate" : 0.0,
 										"fill" : ""
 									}
 ,
@@ -3261,8 +3261,8 @@
 													"box" : 													{
 														"maxclass" : "newobj",
 														"text" : "out 4",
-														"numoutlets" : 0,
 														"patching_rect" : [ 689.0, 684.0, 35.0, 22.0 ],
+														"numoutlets" : 0,
 														"id" : "obj-7",
 														"numinlets" : 1
 													}
@@ -3272,8 +3272,8 @@
 													"box" : 													{
 														"maxclass" : "newobj",
 														"text" : "out 3",
-														"numoutlets" : 0,
 														"patching_rect" : [ 466.666666666666686, 684.0, 35.0, 22.0 ],
+														"numoutlets" : 0,
 														"id" : "obj-6",
 														"numinlets" : 1
 													}
@@ -3283,8 +3283,8 @@
 													"box" : 													{
 														"maxclass" : "newobj",
 														"text" : "out 2",
-														"numoutlets" : 0,
 														"patching_rect" : [ 244.333333333333343, 684.0, 35.0, 22.0 ],
+														"numoutlets" : 0,
 														"id" : "obj-4",
 														"numinlets" : 1
 													}
@@ -3294,8 +3294,8 @@
 													"box" : 													{
 														"maxclass" : "newobj",
 														"text" : "out 1",
-														"numoutlets" : 0,
 														"patching_rect" : [ 22.0, 684.0, 35.0, 22.0 ],
+														"numoutlets" : 0,
 														"id" : "obj-3",
 														"numinlets" : 1
 													}
@@ -3304,15 +3304,15 @@
 , 												{
 													"box" : 													{
 														"maxclass" : "codebox",
-														"numoutlets" : 4,
-														"fontname" : "<Monospaced>",
 														"patching_rect" : [ 22.0, 50.0, 686.0, 615.0 ],
-														"outlettype" : [ "", "", "", "" ],
+														"numoutlets" : 4,
 														"fontface" : 0,
+														"outlettype" : [ "", "", "", "" ],
 														"id" : "obj-5",
 														"fontsize" : 12.0,
+														"fontname" : "<Monospaced>",
 														"numinlets" : 2,
-														"code" : "updateMax(k, lastAmp, WorkingData){\r\n    workingMaxAmp, _ = peek(WorkingData, 0, 0);\n    workingMaxIndex, _ = peek(WorkingData, 0, 1);\n    working2ndAmp, _ = peek(WorkingData, 1, 0);\n    working2ndIndex, _ = peek(WorkingData, 1, 1);\n    working3rdAmp, _ = peek(WorkingData, 2, 0);\n    working3rdIndex, _ = peek(WorkingData, 2, 1);\n    working4thAmp, _ = peek(WorkingData, 3, 0);\n    working4thIndex, _ = peek(WorkingData, 3, 1);\n    working5thAmp, _ = peek(WorkingData, 4, 0);\n    working5thIndex, _ = peek(WorkingData, 4, 1);\n    working6thAmp, _ = peek(WorkingData, 5, 0);\n    working6thIndex, _ = peek(WorkingData, 5, 1);\n\n    if(k == workingMaxIndex){\n        // Same bin as the 1st place → Simply update in place (no shifting)\n        poke(WorkingData, lastAmp, 0, 0);\n        poke(WorkingData, k, 0, 1);\n    } else if(k == working2ndIndex){\n        // Same bin as 2nd place → Just update it in place\n        poke(WorkingData, lastAmp, 1, 0);\n        poke(WorkingData, k, 1, 1);\n    } else if(k == working3rdIndex){\n        poke(WorkingData, lastAmp, 2, 0);\n        poke(WorkingData, k, 2, 1);\n    } else if(k == working4thIndex){\n        poke(WorkingData, lastAmp, 3, 0);\n        poke(WorkingData, k, 3, 1);\n    } else if(k == working5thIndex){\n        poke(WorkingData, lastAmp, 4, 0);\n        poke(WorkingData, k, 4, 1);\n    } else if(k == working6thIndex){\n        poke(WorkingData, lastAmp, 5, 0);\n        poke(WorkingData, k, 5, 1);\n    } else if(lastAmp > workingMaxAmp){\n        // New bin surpassed the 1st place → Demote current 1st place to 2nd, \n        // set new value to 1st place\n        poke(WorkingData, working5thAmp, 5, 0);\n        poke(WorkingData, working5thIndex, 5, 1);\n        poke(WorkingData, working4thAmp, 4, 0);\n        poke(WorkingData, working4thIndex, 4, 1);\n        poke(WorkingData, working3rdAmp, 3, 0);\n        poke(WorkingData, working3rdIndex, 3, 1);\n        poke(WorkingData, working2ndAmp, 2, 0);\n        poke(WorkingData, working2ndIndex, 2, 1);\n        poke(WorkingData, workingMaxAmp, 1, 0);\n        poke(WorkingData, workingMaxIndex, 1, 1);\n        poke(WorkingData, lastAmp, 0, 0);\n        poke(WorkingData, k, 0, 1);\n    } else if(lastAmp > working2ndAmp){\n        poke(WorkingData, working5thAmp, 5, 0);\n        poke(WorkingData, working5thIndex, 5, 1);\n        poke(WorkingData, working4thAmp, 4, 0);\n        poke(WorkingData, working4thIndex, 4, 1);\n        poke(WorkingData, working3rdAmp, 3, 0);\n        poke(WorkingData, working3rdIndex, 3, 1);\n        poke(WorkingData, working2ndAmp, 2, 0);\n        poke(WorkingData, working2ndIndex, 2, 1);\n        poke(WorkingData, lastAmp, 1, 0);\n        poke(WorkingData, k, 1, 1);\n    } else if(lastAmp > working3rdAmp){\n        poke(WorkingData, working5thAmp, 5, 0);\n        poke(WorkingData, working5thIndex, 5, 1);\n        poke(WorkingData, working4thAmp, 4, 0);\n        poke(WorkingData, working4thIndex, 4, 1);\n        poke(WorkingData, working3rdAmp, 3, 0);\n        poke(WorkingData, working3rdIndex, 3, 1);\n        poke(WorkingData, lastAmp, 2, 0);\n        poke(WorkingData, k, 2, 1);\n    } else if(lastAmp > working4thAmp){\n        poke(WorkingData, working5thAmp, 5, 0);\n        poke(WorkingData, working5thIndex, 5, 1);\n        poke(WorkingData, working4thAmp, 4, 0);\n        poke(WorkingData, working4thIndex, 4, 1);\n        poke(WorkingData, lastAmp, 3, 0);\n        poke(WorkingData, k, 3, 1);\n    } else if(lastAmp > working5thAmp){\n        poke(WorkingData, working5thAmp, 5, 0);\n        poke(WorkingData, working5thIndex, 5, 1);\n        poke(WorkingData, lastAmp, 4, 0);\n        poke(WorkingData, k, 4, 1);\n    } else if(lastAmp > working6thAmp){\n        poke(WorkingData, lastAmp, 5, 0);\n        poke(WorkingData, k, 5, 1);\n    }\r\n\treturn 0;\n}\r\n\r\n\r\ncommitMax(CurrentData, WorkingData){\n    for(i = 0; i < dim(WorkingData); i += 1) {\n        currentMaxAmp, _ = peek(WorkingData, i, 0);\n        poke(CurrentData, currentMaxAmp, i, 0);\n        currentMaxIndex, _ = peek(WorkingData, i, 1);\n        poke(CurrentData, currentMaxIndex, i, 1);\n        poke(WorkingData, 0, i, 0);\n        poke(WorkingData, 0, i, 1);\n    }\n    return 0;\n}\r\n\r\novertoneMask(CurrentMaxData, OvertoneThreshold, PolyTolerance, OutputBuff, \r\nnum, overtone){\r\n\tCurrentMaxAmp, _ = peek(CurrentMaxData, num, 0);\r\n\tCurrentMaxIndex, _ = peek(CurrentMaxData, num, 1);\r\n\tharmonicAmp, harmonicIndex = peek(OutputBuff, CurrentMaxIndex + overtone, \r\n\tboundmode = \"ignore\");\r\n\tif(CurrentMaxAmp * (OvertoneThreshold * 0.01) < harmonicAmp &&\r\n\t   (abs(CurrentMaxAmp - harmonicAmp) / harmonicAmp) > PolyTolerance * 0.01){\r\n\t\tpoke(OutputBuff, harmonicAmp * 0, harmonicIndex);\r\n\t}\r\n\treturn 0;\r\n}\r\n\r\nParam Q_factor(0);\r\nParam overtoneThreshold(0);\r\nParam polyTolerance(0);\r\nParam noiseFloor(0);\r\nBuffer outputBuff(\"OutputBuff\");\r\nData countBuff(88, 2);\r\nData phaseBuff(88, 2);\r\nData sumCosBuff(88, 2);\r\nData sumSinBuff(88, 2);\r\nData currentData(6, 2);//amp, index\r\nData workingData(6, 2);//amp, index\r\n\r\n\r\nQ = 1 / (pow(2, 1 / 12) - 1) * Q_factor;\r\nsumInput = (in1 + in2) * 0.5;\r\n\r\nfor(k = 0; k < 88; k += 1) {\r\n    freq = mtof(k + 21);\t\r\n\twinLength = Q * (samplerate / freq);\r\n\t\r\n\t//Time variation (gradient) of phase\r\n\tphaseStep = twopi * freq / samplerate;\r\n\t\r\n \tcount1A, count2A = peek(countBuff, k, 0);\r\n\tcount1B, count2B = peek(countBuff, k, 1); \r\n\tcosFuncA = cos(twopi * count1A / (winLength - 1));\r\n\tcosFuncB = cos(twopi * (count1B - (winLength / 2)) / (winLength - 1));\r\n\twinFuncA = 0.5 - 0.5 * cosFuncA;\r\n\twinFuncB = 0.5 - 0.5 * cosFuncB;\r\n\t\r\n\tphase1A, phase2A = peek(phaseBuff, k, 0);\r\n\tphase1B, phase2B = peek(phaseBuff, k, 1);\r\n\t\t\t\t\r\n\tsumCos1A, sumCos2A = peek(sumCosBuff, k, 0);\r\n\tpoke(sumCosBuff, sumCos1A + sumInput * winFuncA * cos(phase1A), k, 0);\r\n\tsumCos1B, sumCos2B = peek(sumCosBuff, k, 1);\r\n\tpoke(sumCosBuff, sumCos1B + sumInput * winFuncB * cos(phase1B), k, 1);\r\n\r\n\tsumSin1A, sumSin2A = peek(sumSinBuff, k, 0);\r\n\tpoke(sumSinBuff, sumSin1A + sumInput * winFuncA * sin(phase1A), k, 0);\r\n    sumSin1B, sumSin2B = peek(sumSinBuff, k, 1);\r\n\tpoke(sumSinBuff, sumSin1B + sumInput * winFuncB * sin(phase1B), k, 1);\r\n\t\r\n\t//1st Window---------------------------------------------------------------\t\t\r\n\tif(count1A > winLength){\t\t\r\n\t    lastAmpA = (cartopol(sumCos1A, sumSin1A) / winLength) * 4.0;\r\n//\t\tif(lastAmpA < noiseFloor * 0.01){\r\n//\t\t\tlastAmpA = 0;\r\n//\t\t}\r\n\t\t\r\n\t\tpoke(outputBuff, lastAmpA, k);\r\n\t\t\r\n\t\tif(k == 0){//Select the largest amplitude after all loops have completed.\r\n\t\t\tcommitMax(currentData, workingData);\r\n\t\t}\r\n\t\t\r\n\t\tupdateMax(k, lastAmpA, workingData);\r\n\t\t\r\n\t\tpoke(sumCosBuff, 0, k, 0);\r\n\t\tpoke(sumSinBuff, 0, k, 0);\r\n\t\tpoke(countBuff, 0, k, 0);\r\n\t\tpoke(phaseBuff, 0, k, 0);\t\r\n\t}else{\r\n        poke(countBuff, count1A + 1, k, 0);\r\n\t\tpoke(phaseBuff, phase1A + phaseStep, k, 0);\r\n\t}\r\n\t\r\n\t//2nd Window---------------------------------------------------------------\t\r\n\tif(count1B > winLength + (winLength / 2)){\t\r\n\t\tlastAmpB = (cartopol(sumCos1B, sumSin1B) / winLength) * 4.0;\r\n\t\t\r\n//\t\tif(lastAmpB < noiseFloor * 0.01){\r\n//\t\t\tlastAmpB = 0;\r\n//\t\t}\r\n\t\t\r\n\t\tpoke(outputBuff, lastAmpB, k);\r\n\t\t\r\n\t\tif(k == 0){//Select the largest amplitude after all loops have completed.\r\n\t\t\tcommitMax(currentData, workingData);\r\n\t\t}\r\n\t\t\r\n\t\tpoke(sumCosBuff, 0, k, 1);\r\n\t\tpoke(sumSinBuff, 0, k, 1);\r\n\t\tpoke(countBuff, (winLength / 2), k, 1);\r\n\t\tpoke(phaseBuff, 0, k, 1);\r\n\t}else{\r\n        poke(countBuff, count1B + 1, k, 1);\r\n\t\tpoke(phaseBuff, phase1B + phaseStep, k, 1);\r\n\t}\r\n}\r\n\r\nfor(i = 0; i <= 1; i += 1) {\r\n\t//One octave \r\n\tovertoneMask(currentData, overtoneThreshold, polyTolerance, outputBuff, i, 12);\r\n\t//One octave + perfect 5th;\r\n\tovertoneMask(currentData, overtoneThreshold, polyTolerance, outputBuff, i, 19);\r\n\t//Two octave \r\n\tovertoneMask(currentData, overtoneThreshold, polyTolerance, outputBuff, i, 24);\r\n\t//Two octave +  major 3rd\r\n\tovertoneMask(currentData, overtoneThreshold, polyTolerance, outputBuff, i, 28);\r\n}\r\nout1 = in1;\r\nout2 = in2;\r\ncurrentMaxIndex1, _ = peek(currentData, 0, 1);\r\ncurrentMaxIndex2, _ = peek(currentData, 1, 1);\r\nout3 = currentMaxIndex1 + 21;\r\nout4 = currentMaxIndex2 + 21;"
+														"code" : "updateMax(k, lastAmp, WorkingData){\r\n    workingMaxAmp, _ = peek(WorkingData, 0, 0);\n    workingMaxIndex, _ = peek(WorkingData, 0, 1);\n    working2ndAmp, _ = peek(WorkingData, 1, 0);\n    working2ndIndex, _ = peek(WorkingData, 1, 1);\n    working3rdAmp, _ = peek(WorkingData, 2, 0);\n    working3rdIndex, _ = peek(WorkingData, 2, 1);\n    working4thAmp, _ = peek(WorkingData, 3, 0);\n    working4thIndex, _ = peek(WorkingData, 3, 1);\n    working5thAmp, _ = peek(WorkingData, 4, 0);\n    working5thIndex, _ = peek(WorkingData, 4, 1);\n    working6thAmp, _ = peek(WorkingData, 5, 0);\n    working6thIndex, _ = peek(WorkingData, 5, 1);\n\n    if(k == workingMaxIndex){\n        // Same bin as the 1st place → Simply update in place (no shifting)\n        poke(WorkingData, lastAmp, 0, 0);\n        poke(WorkingData, k, 0, 1);\n    } else if(k == working2ndIndex){\n        // Same bin as 2nd place → Just update it in place\n        poke(WorkingData, lastAmp, 1, 0);\n        poke(WorkingData, k, 1, 1);\n    } else if(k == working3rdIndex){\n        poke(WorkingData, lastAmp, 2, 0);\n        poke(WorkingData, k, 2, 1);\n    } else if(k == working4thIndex){\n        poke(WorkingData, lastAmp, 3, 0);\n        poke(WorkingData, k, 3, 1);\n    } else if(k == working5thIndex){\n        poke(WorkingData, lastAmp, 4, 0);\n        poke(WorkingData, k, 4, 1);\n    } else if(k == working6thIndex){\n        poke(WorkingData, lastAmp, 5, 0);\n        poke(WorkingData, k, 5, 1);\n    } else if(lastAmp > workingMaxAmp){\n        // New bin surpassed the 1st place → Demote current 1st place to 2nd, \n        // set new value to 1st place\n        poke(WorkingData, working5thAmp, 5, 0);\n        poke(WorkingData, working5thIndex, 5, 1);\n        poke(WorkingData, working4thAmp, 4, 0);\n        poke(WorkingData, working4thIndex, 4, 1);\n        poke(WorkingData, working3rdAmp, 3, 0);\n        poke(WorkingData, working3rdIndex, 3, 1);\n        poke(WorkingData, working2ndAmp, 2, 0);\n        poke(WorkingData, working2ndIndex, 2, 1);\n        poke(WorkingData, workingMaxAmp, 1, 0);\n        poke(WorkingData, workingMaxIndex, 1, 1);\n        poke(WorkingData, lastAmp, 0, 0);\n        poke(WorkingData, k, 0, 1);\n    } else if(lastAmp > working2ndAmp){\n        poke(WorkingData, working5thAmp, 5, 0);\n        poke(WorkingData, working5thIndex, 5, 1);\n        poke(WorkingData, working4thAmp, 4, 0);\n        poke(WorkingData, working4thIndex, 4, 1);\n        poke(WorkingData, working3rdAmp, 3, 0);\n        poke(WorkingData, working3rdIndex, 3, 1);\n        poke(WorkingData, working2ndAmp, 2, 0);\n        poke(WorkingData, working2ndIndex, 2, 1);\n        poke(WorkingData, lastAmp, 1, 0);\n        poke(WorkingData, k, 1, 1);\n    } else if(lastAmp > working3rdAmp){\n        poke(WorkingData, working5thAmp, 5, 0);\n        poke(WorkingData, working5thIndex, 5, 1);\n        poke(WorkingData, working4thAmp, 4, 0);\n        poke(WorkingData, working4thIndex, 4, 1);\n        poke(WorkingData, working3rdAmp, 3, 0);\n        poke(WorkingData, working3rdIndex, 3, 1);\n        poke(WorkingData, lastAmp, 2, 0);\n        poke(WorkingData, k, 2, 1);\n    } else if(lastAmp > working4thAmp){\n        poke(WorkingData, working5thAmp, 5, 0);\n        poke(WorkingData, working5thIndex, 5, 1);\n        poke(WorkingData, working4thAmp, 4, 0);\n        poke(WorkingData, working4thIndex, 4, 1);\n        poke(WorkingData, lastAmp, 3, 0);\n        poke(WorkingData, k, 3, 1);\n    } else if(lastAmp > working5thAmp){\n        poke(WorkingData, working5thAmp, 5, 0);\n        poke(WorkingData, working5thIndex, 5, 1);\n        poke(WorkingData, lastAmp, 4, 0);\n        poke(WorkingData, k, 4, 1);\n    } else if(lastAmp > working6thAmp){\n        poke(WorkingData, lastAmp, 5, 0);\n        poke(WorkingData, k, 5, 1);\n    }\r\n\treturn 0;\n}\r\n\r\n\r\ncommitMax(CurrentData, WorkingData){\n    for(i = 0; i < dim(WorkingData); i += 1) {\n        currentMaxAmp, _ = peek(WorkingData, i, 0);\n        poke(CurrentData, currentMaxAmp, i, 0);\n        currentMaxIndex, _ = peek(WorkingData, i, 1);\n        poke(CurrentData, currentMaxIndex, i, 1);\n        poke(WorkingData, 0, i, 0);\n        poke(WorkingData, 0, i, 1);\n    }\n    return 0;\n}\r\n\r\novertoneMask(CurrentMaxData, OvertoneThreshold, PolyTolerance, OutputBuff, \r\nnum, overtone){\r\n\tCurrentMaxAmp, _ = peek(CurrentMaxData, num, 0);\r\n\tCurrentMaxIndex, _ = peek(CurrentMaxData, num, 1);\r\n\tharmonicAmp, harmonicIndex = peek(OutputBuff, CurrentMaxIndex + overtone, \r\n\tboundmode = \"ignore\");\r\n\tif(CurrentMaxAmp * (OvertoneThreshold * 0.01) < harmonicAmp &&\r\n\t   (abs(CurrentMaxAmp - harmonicAmp) / harmonicAmp) > PolyTolerance * 0.01){\r\n\t\tpoke(OutputBuff, harmonicAmp * 0, harmonicIndex);\r\n\t}\r\n\treturn 0;\r\n}\r\n\r\nParam Q_factor(0);\r\nParam overtoneThreshold(0);\r\nParam polyTolerance(0);\r\nParam noiseFloor(0);\r\nBuffer outputBuff(\"OutputBuff\");\r\nData countBuff(88, 2);\r\nData phaseBuff(88, 2);\r\nData sumCosBuff(88, 2);\r\nData sumSinBuff(88, 2);\r\nData currentData(6, 2);//amp, index\r\nData workingData(6, 2);//amp, index\r\n\r\n\r\nQ = 1 / (pow(2, 1 / 12) - 1) * Q_factor;\r\nsumInput = (in1 + in2) * 0.5;\r\n\r\nfor(k = 0; k < 88; k += 1) {\r\n    freq = mtof(k + 21);\t\r\n\twinLength = Q * (samplerate / freq);\r\n\t\r\n\t//Time variation (gradient) of phase\r\n\tphaseStep = twopi * freq / samplerate;\r\n\t\r\n \tcount1A, count2A = peek(countBuff, k, 0);\r\n\tcount1B, count2B = peek(countBuff, k, 1); \r\n\tcosFuncA = cos(twopi * count1A / (winLength - 1));\r\n\tcosFuncB = cos(twopi * (count1B - (winLength / 2)) / (winLength - 1));\r\n\twinFuncA = 0.5 - 0.5 * cosFuncA;\r\n\twinFuncB = 0.5 - 0.5 * cosFuncB;\r\n\t\r\n\tphase1A, phase2A = peek(phaseBuff, k, 0);\r\n\tphase1B, phase2B = peek(phaseBuff, k, 1);\r\n\t\t\t\t\r\n\tsumCos1A, sumCos2A = peek(sumCosBuff, k, 0);\r\n\tpoke(sumCosBuff, sumCos1A + sumInput * winFuncA * cos(phase1A), k, 0);\r\n\tsumCos1B, sumCos2B = peek(sumCosBuff, k, 1);\r\n\tpoke(sumCosBuff, sumCos1B + sumInput * winFuncB * cos(phase1B), k, 1);\r\n\r\n\tsumSin1A, sumSin2A = peek(sumSinBuff, k, 0);\r\n\tpoke(sumSinBuff, sumSin1A + sumInput * winFuncA * sin(phase1A), k, 0);\r\n    sumSin1B, sumSin2B = peek(sumSinBuff, k, 1);\r\n\tpoke(sumSinBuff, sumSin1B + sumInput * winFuncB * sin(phase1B), k, 1);\r\n\t\r\n\t//1st Window---------------------------------------------------------------\t\t\r\n\tif(count1A > winLength){\t\t\r\n\t    lastAmpA = (cartopol(sumCos1A, sumSin1A) / winLength) * 4.0;\r\n\t\tif(lastAmpA < noiseFloor * 0.01){\r\n\t\t\tlastAmpA = 0;\r\n\t\t}\r\n\t\t\r\n\t\tpoke(outputBuff, lastAmpA, k);\r\n\t\t\r\n\t\tif(k == 0){//Select the largest amplitude after all loops have completed.\r\n\t\t\tcommitMax(currentData, workingData);\r\n\t\t}\r\n\t\t\r\n\t\tupdateMax(k, lastAmpA, workingData);\r\n\t\t\r\n\t\tpoke(sumCosBuff, 0, k, 0);\r\n\t\tpoke(sumSinBuff, 0, k, 0);\r\n\t\tpoke(countBuff, 0, k, 0);\r\n\t\tpoke(phaseBuff, 0, k, 0);\t\r\n\t}else{\r\n        poke(countBuff, count1A + 1, k, 0);\r\n\t\tpoke(phaseBuff, phase1A + phaseStep, k, 0);\r\n\t}\r\n\t\r\n\t//2nd Window---------------------------------------------------------------\t\r\n\tif(count1B > winLength + (winLength / 2)){\t\r\n\t\tlastAmpB = (cartopol(sumCos1B, sumSin1B) / winLength) * 4.0;\r\n\t\t\r\n\t\tif(lastAmpB < noiseFloor * 0.01){\r\n\t\t\tlastAmpB = 0;\r\n\t\t}\r\n\t\t\r\n\t\tpoke(outputBuff, lastAmpB, k);\r\n\t\t\r\n\t\tif(k == 0){//Select the largest amplitude after all loops have completed.\r\n\t\t\tcommitMax(currentData, workingData);\r\n\t\t}\r\n\t\t\r\n\t\tpoke(sumCosBuff, 0, k, 1);\r\n\t\tpoke(sumSinBuff, 0, k, 1);\r\n\t\tpoke(countBuff, (winLength / 2), k, 1);\r\n\t\tpoke(phaseBuff, 0, k, 1);\r\n\t}else{\r\n        poke(countBuff, count1B + 1, k, 1);\r\n\t\tpoke(phaseBuff, phase1B + phaseStep, k, 1);\r\n\t}\r\n}\r\n\r\nfor(i = 0; i <= 1; i += 1) {\r\n\t//One octave \r\n\tovertoneMask(currentData, overtoneThreshold, polyTolerance, outputBuff, i, 12);\r\n\t//One octave + perfect 5th;\r\n\tovertoneMask(currentData, overtoneThreshold, polyTolerance, outputBuff, i, 19);\r\n\t//Two octave \r\n\tovertoneMask(currentData, overtoneThreshold, polyTolerance, outputBuff, i, 24);\r\n\t//Two octave +  major 3rd\r\n\tovertoneMask(currentData, overtoneThreshold, polyTolerance, outputBuff, i, 28);\r\n}\r\nout1 = in1;\r\nout2 = in2;\r\ncurrentMaxIndex1, _ = peek(currentData, 0, 1);\r\ncurrentMaxIndex2, _ = peek(currentData, 1, 1);\r\nout3 = currentMaxIndex1 + 21;\r\nout4 = currentMaxIndex2 + 21;"
 													}
 
 												}
@@ -3320,8 +3320,8 @@
 													"box" : 													{
 														"maxclass" : "newobj",
 														"text" : "in 1",
-														"numoutlets" : 1,
 														"patching_rect" : [ 22.0, 14.0, 28.0, 22.0 ],
+														"numoutlets" : 1,
 														"outlettype" : [ "" ],
 														"id" : "obj-1",
 														"numinlets" : 0
@@ -3332,8 +3332,8 @@
 													"box" : 													{
 														"maxclass" : "newobj",
 														"text" : "in 2",
-														"numoutlets" : 1,
 														"patching_rect" : [ 689.0, 14.0, 28.0, 22.0 ],
+														"numoutlets" : 1,
 														"outlettype" : [ "" ],
 														"id" : "obj-2",
 														"numinlets" : 0
@@ -3343,29 +3343,8 @@
  ],
 											"lines" : [ 												{
 													"patchline" : 													{
-														"source" : [ "obj-5", 0 ],
-														"destination" : [ "obj-3", 0 ]
-													}
-
-												}
-, 												{
-													"patchline" : 													{
-														"source" : [ "obj-5", 1 ],
-														"destination" : [ "obj-4", 0 ]
-													}
-
-												}
-, 												{
-													"patchline" : 													{
-														"source" : [ "obj-1", 0 ],
-														"destination" : [ "obj-5", 0 ]
-													}
-
-												}
-, 												{
-													"patchline" : 													{
-														"source" : [ "obj-2", 0 ],
-														"destination" : [ "obj-5", 1 ]
+														"source" : [ "obj-5", 3 ],
+														"destination" : [ "obj-7", 0 ]
 													}
 
 												}
@@ -3378,8 +3357,29 @@
 												}
 , 												{
 													"patchline" : 													{
-														"source" : [ "obj-5", 3 ],
-														"destination" : [ "obj-7", 0 ]
+														"source" : [ "obj-2", 0 ],
+														"destination" : [ "obj-5", 1 ]
+													}
+
+												}
+, 												{
+													"patchline" : 													{
+														"source" : [ "obj-1", 0 ],
+														"destination" : [ "obj-5", 0 ]
+													}
+
+												}
+, 												{
+													"patchline" : 													{
+														"source" : [ "obj-5", 1 ],
+														"destination" : [ "obj-4", 0 ]
+													}
+
+												}
+, 												{
+													"patchline" : 													{
+														"source" : [ "obj-5", 0 ],
+														"destination" : [ "obj-3", 0 ]
 													}
 
 												}
@@ -3663,12 +3663,6 @@
 ,
 					"patching_rect" : [ 17.0, 131.0, 84.5, 22.0 ],
 					"rnboattrcache" : 					{
-						"overtoneThreshold" : 						{
-							"label" : "overtoneThreshold",
-							"isEnum" : 0,
-							"parsestring" : ""
-						}
-,
 						"noiseFloor" : 						{
 							"label" : "noiseFloor",
 							"isEnum" : 0,
@@ -3677,6 +3671,12 @@
 ,
 						"Q_factor" : 						{
 							"label" : "Q_factor",
+							"isEnum" : 0,
+							"parsestring" : ""
+						}
+,
+						"overtoneThreshold" : 						{
+							"label" : "overtoneThreshold",
 							"isEnum" : 0,
 							"parsestring" : ""
 						}

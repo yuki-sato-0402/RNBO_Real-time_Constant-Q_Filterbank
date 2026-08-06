@@ -3,7 +3,16 @@
     "name": "untitled",
     "preset": {
       "Q_factor": {
-        "value": 1
+        "value": 1.5
+      },
+      "noiseFloor": {
+        "value": 5
+      },
+      "overtoneThreshold": {
+        "value": 50
+      },
+      "polyTolerance": {
+        "value": 20
       }
     }
   }
