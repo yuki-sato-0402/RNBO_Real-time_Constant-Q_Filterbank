@@ -12,7 +12,7 @@ This system is implemented in `gen` (RNBO) and uses a **Constant-Q filter bank**
 - **JUCE/RNBO Integration**: Exported via RNBO's C++ codegen, ready for deployment as VST3 / AU / Standalone via the JUCE template.
 
 ## Demonstration
-[Youtube<img width="848" height="574" alt="Screenshot 2026-08-07 at 23 32 13" src="https://github.com/user-attachments/assets/50fd372b-4811-49fc-be41-fe5e8bf1d8b8" />](https://youtu.be/0BJ5TB-2kJg)
+[Youtube<img width="848" height="574" alt="Screenshot 2026-08-07 at 23 32 13" src="https://github.com/user-attachments/assets/50fd372b-4811-49fc-be41-fe5e8bf1d8b8" />](https://youtu.be/Vyv0BH2Uh7w)
 
 ## Algorithm Details
 
