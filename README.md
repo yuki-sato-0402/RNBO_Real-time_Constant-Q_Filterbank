@@ -1,4 +1,4 @@
-# RNBO_ConstantQPolyPitchTracker
+# RNBO_Real-time_Constant-Q_Filterbank
 **A real-time polyphonic pitch (F0) detector based on a Constant-Q filter bank (RNBO / Max gen)**
 
 This system is implemented in `gen` (RNBO) and uses a **Constant-Q filter bank** to compute, in real time, the amplitude of each of the 88 piano keys (A0–C8) from the input signal, and to detect the notes with the largest amplitude as fundamental-frequency (F0) candidates. Unlike simple zero-crossing or FFT-based methods, each key has its own dedicated correlation (Goertzel-like) filter, which gives a musically natural frequency resolution matched to the semitone scale. A dedicated overtone-masking algorithm also suppresses harmonics of a detected fundamental (octaves, fifths, etc.) so they aren't mistaken for separate notes, improving accuracy for polyphonic (chord) input.
@@ -12,8 +12,7 @@ This system is implemented in `gen` (RNBO) and uses a **Constant-Q filter bank**
 - **JUCE/RNBO Integration**: Exported via RNBO's C++ codegen, ready for deployment as VST3 / AU / Standalone via the JUCE template.
 
 ## Demonstration
-[Youtube<img width="1144" height="716" alt="Screenshot 2026-02-05 at 22 16 03" src="https://github.com/user-attachments/assets/d86b4108-d3ca-4d50-aa24-77cbcaf8cde5" />](https://youtu.be/0BJ5TB-2kJg)
-
+[Youtube<img width="848" height="574" alt="Screenshot 2026-08-07 at 23 32 13" src="https://github.com/user-attachments/assets/50fd372b-4811-49fc-be41-fe5e8bf1d8b8" />](https://youtu.be/0BJ5TB-2kJg)
 
 ## Algorithm Details
 
