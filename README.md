@@ -23,7 +23,7 @@ The C++ source exported from RNBO is in `export/`, and the original Max patch is
 ### 1. Pitch Analysis via a Constant-Q Filter Bank
 At the core of this system is a **Constant-Q filter bank**, with one filter centered on each of the 88 equal-tempered key frequencies `freq = mtof(k + 21)`. 
 
-A key motivation for this design is to solve a well-known limitation of Max's fft~: because fft~ uses a single, fixed window length across the entire spectrum, low frequencies end up with poor frequency resolution (the bin spacing is too coarse to cleanly separate low notes) unless the window is made very long, which then hurts time resolution everywhere. Here, each key has its own window length, sized specifically for its own frequency — so low notes automatically get the long window they need for good frequency resolution, and high notes automatically get a short window for fast response, without one fixed window length forcing a compromise across the whole range.
+A key motivation for this design is to solve a well-known limitation of Max's `fft~`: because `fft~` uses a single, fixed window length across the entire spectrum, low frequencies end up with poor frequency resolution (the bin spacing is too coarse to cleanly separate low notes) unless the window is made very long, which then hurts time resolution everywhere. Here, each key has its own window length, sized specifically for its own frequency — so low notes automatically get the long window they need for good frequency resolution, and high notes automatically get a short window for fast response, without one fixed window length forcing a compromise across the whole range.
 
 The analysis window length (in samples) for each key is given by:
 
