@@ -1,7 +1,7 @@
 # RNBO_Real-time_Constant-Q_Filterbank
 **A real-time polyphonic pitch (F0) detector plugin based on a Constant-Q filter bank (VST3 / AU / Standalone)**
 
-This system is implemented in `gen` (RNBO) and uses a **Constant-Q filter bank** to compute, in real time, the amplitude of each of the 88 piano keys (A0–C8) from the input signal, and to detect the notes with the largest amplitude as fundamental-frequency (F0) candidates. Unlike simple zero-crossing or FFT-based methods, each key has its own dedicated correlation (Goertzel-like) filter, which gives a musically natural frequency resolution matched to the semitone scale. A dedicated overtone-masking algorithm also suppresses harmonics of a detected fundamental (octaves, fifths, etc.) so they aren't mistaken for separate notes, improving accuracy for polyphonic (chord) input.
+This system is implemented in `gen~` (RNBO) and uses a **Constant-Q filter bank** to compute, in real time, the amplitude of each of the 88 piano keys (A0–C8) from the input signal, and to detect the notes with the largest amplitude as fundamental-frequency (F0) candidates. Unlike simple zero-crossing or FFT-based methods, each key has its own dedicated correlation (Goertzel-like) filter, which gives a musically natural frequency resolution matched to the semitone scale. A dedicated overtone-masking algorithm also suppresses harmonics of a detected fundamental (octaves, fifths, etc.) so they aren't mistaken for separate notes, improving accuracy for polyphonic (chord) input.
 
 ## Key Features
 - **Constant-Q Filter Bank**: Each of the 88 keys (A0–C8) has its own correlation filter, giving real-time amplitude estimation with a frequency resolution matched to the equal-tempered semitone spacing.
