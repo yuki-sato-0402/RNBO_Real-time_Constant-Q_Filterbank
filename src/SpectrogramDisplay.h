@@ -21,23 +21,24 @@ public:
         spectrogramImage.clear(spectrogramImage.getBounds(), juce::Colour(10, 13, 20));
 
         // Precompute key layout in the low-resolution image coordinates
-        float imgWhiteKeyWidth = (float)imgWidth / 52.0f; // Exactly 5.0f
+        float imgWhiteKeyWidth = static_cast<float>(imgWidth) / 52.0f; // Exactly 5.0f
         float imgBlackKeyWidth = imgWhiteKeyWidth * 0.62f; // 3.1f
 
         imgKeyVisuals.resize(88);
-        for (int i = 0; i < 88; ++i)
+        for (size_t i = 0; i < 88; ++i)
         {
-            int w = getWhiteKeyIndex(i);
+            int noteIdx = static_cast<int>(i);
+            int w = getWhiteKeyIndex(noteIdx);
             imgKeyVisuals[i].isBlack = (w == -1);
             if (!imgKeyVisuals[i].isBlack)
             {
-                imgKeyVisuals[i].x = w * imgWhiteKeyWidth;
+                imgKeyVisuals[i].x = static_cast<float>(w) * imgWhiteKeyWidth;
                 imgKeyVisuals[i].w = imgWhiteKeyWidth;
             }
             else
             {
-                int leftW = getBlackKeyLeftWhiteIndex(i);
-                imgKeyVisuals[i].x = (leftW + 1) * imgWhiteKeyWidth - (imgBlackKeyWidth * 0.5f);
+                int leftW = getBlackKeyLeftWhiteIndex(noteIdx);
+                imgKeyVisuals[i].x = static_cast<float>(leftW + 1) * imgWhiteKeyWidth - (imgBlackKeyWidth * 0.5f);
                 imgKeyVisuals[i].w = imgBlackKeyWidth;
             }
         }
@@ -160,7 +161,7 @@ public:
 
         // 1. Fetch latest raw values from processor buffer and apply decay for keyboard visual response
         std::vector<float> latestEnergy(88);
-        for (int i = 0; i < 88; ++i)
+        for (size_t i = 0; i < 88; ++i)
         {
             float raw = ringBuffer[i];
             latestEnergy[i] = raw;
@@ -180,22 +181,22 @@ public:
             imgG.fillRect(0, imgH - scrollSpeed, imgW, scrollSpeed);
 
             // Draw new spectrogram row (white keys first, then black keys on top)
-            for (int i = 0; i < 88; ++i)
+            for (size_t i = 0; i < 88; ++i)
             {
                 if (!imgKeyVisuals[i].isBlack)
                 {
                     float energy = latestEnergy[i];
                     imgG.setColour(getSpectrogramColor(energy));
-                    imgG.fillRect(imgKeyVisuals[i].x, (float)(imgH - scrollSpeed), imgKeyVisuals[i].w, (float)scrollSpeed);
+                    imgG.fillRect(imgKeyVisuals[i].x, static_cast<float>(imgH - scrollSpeed), imgKeyVisuals[i].w, static_cast<float>(scrollSpeed));
                 }
             }
-            for (int i = 0; i < 88; ++i)
+            for (size_t i = 0; i < 88; ++i)
             {
                 if (imgKeyVisuals[i].isBlack)
                 {
                     float energy = latestEnergy[i];
                     imgG.setColour(getSpectrogramColor(energy));
-                    imgG.fillRect(imgKeyVisuals[i].x, (float)(imgH - scrollSpeed), imgKeyVisuals[i].w, (float)scrollSpeed);
+                    imgG.fillRect(imgKeyVisuals[i].x, static_cast<float>(imgH - scrollSpeed), imgKeyVisuals[i].w, static_cast<float>(scrollSpeed));
                 }
             }
         }
@@ -217,25 +218,25 @@ public:
         if (spectrogramImage.isValid())
         {
             g.drawImageWithin(spectrogramImage, 
-                              0, 0, (int)bounds.getWidth(), (int)spectrogramHeight,
+                              0, 0, static_cast<int>(bounds.getWidth()), static_cast<int>(spectrogramHeight),
                               juce::RectanglePlacement::stretchToFit);
         }
 
         // 2. Draw vertical octave lines as a technical grid overlay
-        for (int i = 3; i < 88; ++i)
+        for (size_t i = 3; i < 88; ++i)
         {
             if ((i - 3) % 12 == 0) // C note boundaries
             {
                 float x = keyVisuals[i].rect.getX();
                 // Subtly colored glowing grid line
                 g.setColour(juce::Colour(255, 255, 255).withAlpha(0.06f));
-                g.drawVerticalLine((int)x, 0.0f, spectrogramHeight);
+                g.drawVerticalLine(juce::roundToInt(x), 0.0f, spectrogramHeight);
             }
         }
 
         // 3. Draw a separator line between spectrogram and keyboard
         g.setColour(juce::Colour(40, 42, 50));
-        g.drawHorizontalLine((int)spectrogramHeight, 0.0f, bounds.getWidth());
+        g.drawHorizontalLine(juce::roundToInt(spectrogramHeight), 0.0f, bounds.getWidth());
 
         // 4. Draw the 88-key piano keyboard
         // Draw white keys first
@@ -243,7 +244,7 @@ public:
         {
             if (!kv.isBlack)
             {
-                float energy = visualEnergy[kv.noteIndex];
+                float energy = visualEnergy[static_cast<size_t>(kv.noteIndex)];
                 
                 // Normal white key color is a soft clean off-white
                 juce::Colour normalColor = juce::Colour(240, 240, 245);
@@ -267,14 +268,16 @@ public:
                     int octave = (kv.noteIndex - 3) / 12 + 1;
                     juce::String label = "C" + juce::String(octave);
                     g.setColour(juce::Colour(90, 95, 105));
-                    g.setFont(juce::Font(10.0f, juce::Font::bold));
-                    g.drawText(label, kv.rect.getX(), kv.rect.getBottom() - 15.0f, kv.rect.getWidth(), 12.0f, juce::Justification::centred);
+                    g.setFont(juce::Font(juce::FontOptions(10.0f, juce::Font::bold)));
+                    juce::Rectangle<float> labelArea(kv.rect.getX(), kv.rect.getBottom() - 15.0f, kv.rect.getWidth(), 12.0f);
+                    g.drawText(label, labelArea, juce::Justification::centred);
                 }
                 else if (kv.noteIndex == 0)
                 {
                     g.setColour(juce::Colour(90, 95, 105));
-                    g.setFont(juce::Font(10.0f, juce::Font::bold));
-                    g.drawText("A0", kv.rect.getX(), kv.rect.getBottom() - 15.0f, kv.rect.getWidth(), 12.0f, juce::Justification::centred);
+                    g.setFont(juce::Font(juce::FontOptions(10.0f, juce::Font::bold)));
+                    juce::Rectangle<float> labelArea(kv.rect.getX(), kv.rect.getBottom() - 15.0f, kv.rect.getWidth(), 12.0f);
+                    g.drawText("A0", labelArea, juce::Justification::centred);
                 }
             }
         }
@@ -284,7 +287,7 @@ public:
         {
             if (kv.isBlack)
             {
-                float energy = visualEnergy[kv.noteIndex];
+                float energy = visualEnergy[static_cast<size_t>(kv.noteIndex)];
                 
                 // Rich charcoal/black key color
                 juce::Colour normalColor = juce::Colour(22, 24, 30);
@@ -321,17 +324,18 @@ public:
         
         keyVisuals.clear();
         
-        for (int i = 0; i < 88; ++i)
+        for (size_t i = 0; i < 88; ++i)
         {
-            int w = getWhiteKeyIndex(i);
+            int noteIdx = static_cast<int>(i);
+            int w = getWhiteKeyIndex(noteIdx);
             if (w != -1)
             {
                 // White key
                 KeyVisual kv;
-                kv.noteIndex = i;
+                kv.noteIndex = noteIdx;
                 kv.isBlack = false;
                 kv.rect = juce::Rectangle<float>(
-                    w * whiteKeyWidth, 
+                    static_cast<float>(w) * whiteKeyWidth, 
                     height - keyboardHeight, 
                     whiteKeyWidth, 
                     keyboardHeight
@@ -341,12 +345,12 @@ public:
             else
             {
                 // Black key
-                int leftW = getBlackKeyLeftWhiteIndex(i);
+                int leftW = getBlackKeyLeftWhiteIndex(noteIdx);
                 KeyVisual kv;
-                kv.noteIndex = i;
+                kv.noteIndex = noteIdx;
                 kv.isBlack = true;
                 kv.rect = juce::Rectangle<float>(
-                    (leftW + 1) * whiteKeyWidth - (blackKeyWidth * 0.5f), 
+                    static_cast<float>(leftW + 1) * whiteKeyWidth - (blackKeyWidth * 0.5f), 
                     height - keyboardHeight, 
                     blackKeyWidth, 
                     blackKeyHeight

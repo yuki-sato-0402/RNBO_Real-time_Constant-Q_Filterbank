@@ -56,7 +56,7 @@ parameters(*this, nullptr, juce::Identifier("PARAMETERS"),
 void CustomAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
     rnboObject.prepareToProcess (sampleRate, static_cast<size_t> (samplesPerBlock));
-    ringBuffer.resize(buffSize);
+    ringBuffer.resize(static_cast<size_t>(buffSize));
 
     setBufferData();
 }
@@ -163,7 +163,7 @@ void CustomAudioProcessor::setStateInformation (const void* data, int sizeInByte
 
 void CustomAudioProcessor::setBufferData()
 {
-    RNBORingbuffer = std::make_unique<float[]>(buffSize * 2);
+    RNBORingbuffer = std::make_unique<float[]>(static_cast<size_t>(buffSize) * 2);
    
     std::fill(RNBORingbuffer.get(), RNBORingbuffer.get() + buffSize, 0.0f);
    
@@ -173,14 +173,14 @@ void CustomAudioProcessor::setBufferData()
     this->rnboObject.setExternalData(
         "OutputBuff",
         reinterpret_cast<char*>(RNBORingbuffer.get()),
-        buffSize * sizeof(float),
+        static_cast<size_t>(buffSize) * sizeof(float),
         bufferType
     );
 }
 
-void CustomAudioProcessor::updateBuffer(float* RNBORingbuffer)
+void CustomAudioProcessor::updateBuffer(float* rnboBuffer)
 {
-    for (int i = 0; i < buffSize; ++i){
-            ringBuffer[i] = RNBORingbuffer[i];
+    for (size_t i = 0; i < static_cast<size_t>(buffSize); ++i){
+        ringBuffer[i] = rnboBuffer[i];
     }
 }
